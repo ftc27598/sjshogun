@@ -30,9 +30,7 @@ const Navigation = () => {
           <button onClick={() => scrollToSection("robots")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
             Robots
           </button>
-          <button onClick={() => scrollToSection("team")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
-            Team
-          </button>
+          
           <button onClick={() => scrollToSection("sponsors")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
             Partners
           </button>
