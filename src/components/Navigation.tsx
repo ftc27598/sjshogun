@@ -27,9 +27,7 @@ const Navigation = () => {
           <button onClick={() => scrollToSection("about")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
             About
           </button>
-          <button onClick={() => scrollToSection("robots")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
-            Robots
-          </button>
+          
           
           <button onClick={() => scrollToSection("sponsors")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
             Partners
