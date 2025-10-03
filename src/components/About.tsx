@@ -8,14 +8,12 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-primary">Mission</h3>
-            <p className="text-muted-foreground leading-relaxed">To inspire and empower the next generation of innovators through hands-on robotics education, competitive excellence, and community engagement. We believe in fostering creativity, technical skills, and leadership that extends far beyond the workshop.</p>
+            <p className="text-muted-foreground leading-relaxed">Our mission at SJS is to innovate, inspire, and excel in the field of robotics by building a collaborative and inclusive environment where creativity and technical skills come together to solve real-world challenges. Through self-learning, engineering, and community engagement, we shape the future of technology while empowering our team members to grow as leaders and innovators.</p>
           </div>
 
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-primary">Vision</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              To be recognized as a leading force in robotics innovation, setting new standards for technical excellence, collaborative problem-solving, and inspiring future generations to pursue careers in science, technology, engineering, and mathematics.
-            </p>
+            <p className="text-muted-foreground leading-relaxed">To be recognized as a leading team in FTC, setting new standards for first robotics, collaborative problem-solving, and inspiring future generations to pursue careers in science, technology, engineering, and mathematics.</p>
           </div>
 
           <div className="space-y-6">
@@ -27,7 +25,7 @@ const About = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>Collaboration and respect for diverse perspectives</span>
+                <span>Collaboration with the engineering community and community</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
@@ -38,9 +36,7 @@ const About = () => {
 
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-primary">Impact</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              With multiple championships, community outreach programs, and countless hours of innovation, SJ Shogun has established itself as a beacon of excellence in the robotics community, inspiring students and communities worldwide.
-            </p>
+            <p className="text-muted-foreground leading-relaxed">With multiple community outreach programs, and countless hours of innovation, SJ Shogun has established itself as a beacon of excellence in the robotics community, inspiring students and communities worldwide.</p>
           </div>
         </div>
       </div>
