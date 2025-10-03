@@ -18,7 +18,7 @@ const Navigation = () => {
   };
   return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="text-2xl font-bold text-primary red-glow">SJ SHOGUN</div>
+        <div className="text-2xl font-bold text-primary red-glow">SAINT JOHN'S SHOGUN</div>
         
         <div className="hidden md:flex items-center gap-8">
           <button onClick={() => scrollToSection("who-we-are")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
