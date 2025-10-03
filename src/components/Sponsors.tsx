@@ -1,38 +1,37 @@
 const Sponsors = () => {
-  const sponsors = [
-    { name: "Tech Corp", tier: "Platinum" },
-    { name: "Innovation Labs", tier: "Gold" },
-    { name: "Engineering Solutions", tier: "Gold" },
-    { name: "Future Robotics", tier: "Silver" },
-    { name: "STEM Education Foundation", tier: "Silver" },
-    { name: "Local Business Partners", tier: "Bronze" }
+  const partners = [
+    { name: "UniBank", logo: null },
+    { name: "Trader Joe's", logo: null },
+    { name: "SolidWorks", logo: null },
+    { name: "Amazon Robotics", logo: null },
+    { name: "Domino's", logo: null },
+    { name: "FIRST Robotics", logo: null }
   ];
 
   return (
     <section id="sponsors" className="min-h-screen flex items-center justify-center px-6 py-20 bg-card">
       <div className="max-w-5xl mx-auto w-full text-center">
         <h2 className="text-5xl md:text-6xl font-bold mb-8 text-foreground">
-          Our <span className="text-primary red-glow">Sponsors</span>
+          Our <span className="text-primary red-glow">Partners</span>
         </h2>
         <p className="text-xl text-muted-foreground mb-16 max-w-3xl mx-auto">
-          We are grateful for the support of our sponsors who make our mission possible. 
+          We are grateful for the support of our partners who make our mission possible. 
           Their commitment to STEM education and innovation drives our success.
         </p>
         
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {sponsors.map((sponsor, index) => (
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {partners.map((partner, index) => (
             <div
               key={index}
-              className="bg-background border border-border p-6 rounded-lg hover:border-primary transition-all duration-300"
+              className="bg-background border border-border p-8 rounded-lg hover:border-primary transition-all duration-300 flex items-center justify-center min-h-[120px]"
             >
-              <div className="text-primary font-semibold mb-2">{sponsor.tier}</div>
-              <div className="text-xl font-bold">{sponsor.name}</div>
+              <div className="text-xl font-bold text-center">{partner.name}</div>
             </div>
           ))}
         </div>
 
         <div className="pt-12 border-t border-border">
-          <h3 className="text-2xl font-semibold mb-4">Become a Sponsor</h3>
+          <h3 className="text-2xl font-semibold mb-4">Become a Partner</h3>
           <p className="text-muted-foreground mb-6">
             Join us in shaping the future of robotics and STEM education.
           </p>

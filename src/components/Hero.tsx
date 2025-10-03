@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-robot.jpg";
+import heroImage from "@/assets/robot-2024.jpg";
 
 const Hero = () => {
   return (
@@ -6,10 +6,11 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="SJ Shogun Robotics"
-          className="w-full h-full object-cover opacity-60"
+          alt="SJ Shogun Robotics 2024-2025 Robot"
+          className="w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
+        <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
       </div>
       
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">

@@ -4,19 +4,8 @@ const Robots = () => {
       year: "2024-2025",
       name: "Project Phoenix",
       description: "Our latest creation featuring advanced autonomous navigation, precision manipulation, and adaptive AI-driven decision making systems.",
-      specs: ["Autonomous Navigation", "AI-Powered", "Precision Control"]
-    },
-    {
-      year: "2023-2024",
-      name: "Titan V2",
-      description: "Championship-winning design with revolutionary mechanical systems and unparalleled reliability in competitive environments.",
-      specs: ["Regional Champion", "Robust Design", "High-Speed"]
-    },
-    {
-      year: "2022-2023",
-      name: "Velocity",
-      description: "Speed-optimized robot showcasing innovative drivetrain design and competition-proven performance under pressure.",
-      specs: ["Speed Optimized", "Innovative Drivetrain", "Competition Ready"]
+      specs: ["Autonomous Navigation", "AI-Powered", "Precision Control"],
+      awards: ["Connect Award - Community Outreach"]
     }
   ];
 
@@ -27,7 +16,7 @@ const Robots = () => {
           Our <span className="text-primary red-glow">Robots</span>
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
           {robots.map((robot, index) => (
             <div
               key={index}
@@ -40,7 +29,8 @@ const Robots = () => {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {robot.description}
               </p>
-              <div className="space-y-2">
+              <div className="space-y-2 mb-6">
+                <h4 className="text-sm font-semibold text-foreground mb-2">Specifications:</h4>
                 {robot.specs.map((spec, i) => (
                   <div key={i} className="text-sm text-muted-foreground flex items-center">
                     <span className="text-primary mr-2">▸</span>
@@ -48,6 +38,19 @@ const Robots = () => {
                   </div>
                 ))}
               </div>
+              {robot.awards && robot.awards.length > 0 && (
+                <div className="pt-6 border-t border-border">
+                  <h4 className="text-sm font-semibold text-foreground mb-3">🏆 Awards & Recognition:</h4>
+                  <div className="space-y-2">
+                    {robot.awards.map((award, i) => (
+                      <div key={i} className="text-sm text-primary flex items-center red-glow">
+                        <span className="mr-2">★</span>
+                        {award}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
