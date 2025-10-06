@@ -8,7 +8,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-primary">Mission</h3>
-            <p className="text-muted-foreground leading-relaxed">Our mission at SJS is to innovate, inspire, and excel in the field of robotics by building a collaborative and inclusive environment where creativity and technical skills come together to solve real-world challenges. Through self-learning, engineering, and community engagement, we shape the future of technology while empowering our team members to grow as leaders and innovators.</p>
+            <p className="text-muted-foreground leading-relaxed">Our mission at Rojo Robo Dojo is to innovate, inspire, and excel in the field of robotics by building a collaborative and inclusive environment where creativity and technical skills come together to solve real-world challenges. Through self-learning, engineering, and community engagement, we shape the future of technology while empowering our team members to grow as leaders and innovators.</p>
           </div>
 
           <div className="space-y-6">
