@@ -22,31 +22,12 @@ const Robots = () => {
 
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-primary">2024-2025 Season</h3>
-            <h4 className="text-2xl font-semibold text-foreground">Project Phoenix</h4>
             <p className="text-muted-foreground leading-relaxed">
               This is our robot for the 2024-2025 season where we won the Connect Award at Hawk Nest's Havoc Qualifier.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Our latest creation featuring advanced autonomous navigation, precision manipulation, and adaptive AI-driven decision making systems.
             </p>
-            
-            <div className="space-y-4">
-              <h5 className="text-xl font-semibold text-foreground">Key Features</h5>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span className="text-muted-foreground">Autonomous Navigation</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span className="text-muted-foreground">AI-Powered</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
-                  <span className="text-muted-foreground">Precision Control</span>
-                </li>
-              </ul>
-            </div>
 
             <div className="space-y-4">
               <h5 className="text-xl font-semibold text-foreground">Awards</h5>

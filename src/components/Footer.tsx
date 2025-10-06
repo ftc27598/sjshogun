@@ -1,7 +1,12 @@
+import logoImage from "@/assets/sjs-logo.png";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border py-8 px-6">
       <div className="max-w-7xl mx-auto text-center">
+        <div className="flex justify-center mb-4">
+          <img src={logoImage} alt="Saint John's Shogun Logo" className="h-16 w-16" />
+        </div>
         <p className="text-muted-foreground mb-2">
           Reach us at{" "}
           <a
