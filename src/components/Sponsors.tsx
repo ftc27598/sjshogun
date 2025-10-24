@@ -1,3 +1,5 @@
+import northboroPizzaLogo from "@/assets/northboro-pizza-logo.png";
+
 const Sponsors = () => {
   const partners = [{
     name: "UniBank",
@@ -17,6 +19,9 @@ const Sponsors = () => {
   }, {
     name: "FIRST Robotics",
     logo: null
+  }, {
+    name: "Northboro House of Pizza",
+    logo: northboroPizzaLogo
   }];
   return <section id="sponsors" className="min-h-screen flex items-center justify-center px-6 py-20 bg-card">
       <div className="max-w-5xl mx-auto w-full text-center">
@@ -30,7 +35,11 @@ const Sponsors = () => {
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {partners.map((partner, index) => <div key={index} className="bg-background border border-border p-8 rounded-lg hover:border-primary transition-all duration-300 flex items-center justify-center min-h-[120px]">
-              <div className="text-xl font-bold text-center">{partner.name}</div>
+              {partner.logo ? (
+                <img src={partner.logo} alt={`${partner.name} logo`} className="max-h-20 max-w-full object-contain" />
+              ) : (
+                <div className="text-xl font-bold text-center">{partner.name}</div>
+              )}
             </div>)}
         </div>
 
