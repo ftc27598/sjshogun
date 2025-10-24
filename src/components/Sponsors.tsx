@@ -34,9 +34,12 @@ const Sponsors = () => {
         </p>
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {partners.map((partner, index) => <div key={index} className="bg-background border border-border p-8 rounded-lg hover:border-primary transition-all duration-300 flex items-center justify-center min-h-[120px]">
+          {partners.map((partner, index) => <div key={index} className="bg-background border border-border p-8 rounded-lg hover:border-primary transition-all duration-300 flex flex-col items-center justify-center min-h-[160px] gap-4">
               {partner.logo ? (
-                <img src={partner.logo} alt={`${partner.name} logo`} className="max-h-20 max-w-full object-contain" />
+                <>
+                  <img src={partner.logo} alt={`${partner.name} logo`} className="max-h-32 max-w-full object-contain" />
+                  <div className="text-lg font-bold text-center">{partner.name}</div>
+                </>
               ) : (
                 <div className="text-xl font-bold text-center">{partner.name}</div>
               )}
