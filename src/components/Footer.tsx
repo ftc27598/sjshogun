@@ -19,6 +19,17 @@ const Footer = () => {
         <p className="text-sm text-muted-foreground">
           © {new Date().getFullYear()} SJ Shogun Robotics. All rights reserved.
         </p>
+        <p className="text-sm text-muted-foreground mt-2">
+          We are using{" "}
+          <a
+            href="https://robodk.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 transition-colors red-glow-hover"
+          >
+            RoboDK
+          </a>
+        </p>
       </div>
     </footer>
   );
