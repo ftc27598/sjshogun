@@ -8,7 +8,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-primary">Mission</h3>
-            <p className="text-muted-foreground leading-relaxed">Our mission at Rojo Robo Dojo is to innovate, inspire, and excel in the field of robotics by building a collaborative and inclusive environment where creativity and technical skills come together to solve real-world challenges. Through self-learning, engineering, and community engagement, we shape the future of technology while empowering our team members to grow as leaders and innovators.</p>
+            <p className="text-muted-foreground leading-relaxed">Our mission at Saint John's Shogun is to design and build innovative robots while creating a lasting impact through outreach. We aim to combine engineering excellence with meaningful community engagement, as well as building strong connections across the engineering, science, and technology communities.</p>
           </div>
 
           <div className="space-y-6">
@@ -21,22 +21,47 @@ const About = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>Innovation through continuous learning and experimentation</span>
+                <span>Compassion</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>Collaboration with the engineering community and community</span>
+                <span>Zeal</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>Excellence in design, execution, and competition</span>
+                <span>Trust</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-2">•</span>
+                <span>Simplicity</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-2">•</span>
+                <span>Humility</span>
               </li>
             </ul>
           </div>
 
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-primary">Impact</h3>
-            <p className="text-muted-foreground leading-relaxed">With multiple community outreach programs, and countless hours of innovation, SJ Shogun has established itself as a beacon of excellence in the robotics community, inspiring students and communities worldwide.</p>
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <div className="text-center p-3 rounded-lg bg-primary/10 border border-primary/20">
+                <div className="text-2xl font-bold text-primary">600+</div>
+                <div className="text-sm text-muted-foreground">Students & FTC Members</div>
+              </div>
+              <div className="text-center p-3 rounded-lg bg-primary/10 border border-primary/20">
+                <div className="text-2xl font-bold text-primary">200K+</div>
+                <div className="text-sm text-muted-foreground">Viewers Online</div>
+              </div>
+              <div className="text-center p-3 rounded-lg bg-primary/10 border border-primary/20">
+                <div className="text-2xl font-bold text-primary">275+</div>
+                <div className="text-sm text-muted-foreground">Families Impacted</div>
+              </div>
+              <div className="text-center p-3 rounded-lg bg-primary/10 border border-primary/20">
+                <div className="text-2xl font-bold text-primary">200,950+</div>
+                <div className="text-sm text-muted-foreground">Total Impacted</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -2,26 +2,17 @@ import northboroPizzaLogo from "@/assets/northboro-pizza-logo.png";
 
 const Sponsors = () => {
   const partners = [{
-    name: "UniBank",
-    logo: null
-  }, {
-    name: "Trader Joe's",
-    logo: null
-  }, {
-    name: "SolidWorks",
-    logo: null
-  }, {
-    name: "Amazon Robotics",
-    logo: null
-  }, {
-    name: "Domino's",
-    logo: null
-  }, {
-    name: "FIRST Robotics",
+    name: "Coghlin Companies",
     logo: null
   }, {
     name: "Northboro House of Pizza",
     logo: northboroPizzaLogo
+  }, {
+    name: "Unibank",
+    logo: null
+  }, {
+    name: "Saint John's Robotics Camp",
+    logo: null
   }];
   return <section id="sponsors" className="min-h-screen flex items-center justify-center px-6 py-20 bg-card">
       <div className="max-w-5xl mx-auto w-full text-center">
@@ -49,7 +40,7 @@ const Sponsors = () => {
         <div className="pt-12 border-t border-border">
           <h3 className="text-2xl font-semibold mb-4">Become a Partner</h3>
           <p className="text-muted-foreground mb-6">Join us in shaping the future of robotics and STEM education.</p>
-          <a href="mailto:rojodojorobotics@gmail.com" className="inline-block px-8 py-3 bg-primary text-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 red-glow">
+          <a href="mailto:sjshogunrobotics@gmail.com" className="inline-block px-8 py-3 bg-primary text-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 red-glow">
             Contact Us
           </a>
         </div>
