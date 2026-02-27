@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logoImage from "@/assets/sjs-logo.png";
+import logoImage from "../../shogunlogo.png.png";
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
