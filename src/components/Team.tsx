@@ -1,28 +1,43 @@
 const Team = () => {
+  const captains = [
+    { name: "Ayan", role: "Captain" },
+    { name: "Jeremy", role: "Captain" },
+    { name: "Rushil", role: "Captain" },
+  ];
+
+  const leadership = [
+    { name: "Kirpal", role: "Project Manager" },
+  ];
+
   const outreachTeam = [
-    { name: "Ayan", role: "Outreach Captain" },
-    { name: "Anay", role: "Outreach Member" },
-    { name: "Cyril", role: "Outreach Member" },
-    { name: "Krish", role: "Outreach Member" }
+    { name: "Anay", role: "Outreach" },
+    { name: "Cyril", role: "Outreach" },
+    { name: "Krish", role: "Outreach" },
   ];
 
   const programmingTeam = [
-    { name: "Jeremy", role: "Programming Captain" },
-    { name: "Hexi", role: "Programming Member" },
-    { name: "Andy", role: "Programming Member" },
-    { name: "Zander", role: "Programming Member" },
-    { name: "Vihaan", role: "Programming Member" },
-    { name: "Neil", role: "Programming Member" }
+    { name: "Andy", role: "Programmer" },
+    { name: "Vihaan", role: "Programmer" },
+    { name: "David", role: "Programmer" },
   ];
 
   const buildTeam = [
-    { name: "Rushil", role: "Build Captain" },
-    { name: "Vineeth", role: "Build Member" },
-    { name: "Gowtham", role: "Build Member" },
-    { name: "Jack", role: "Build Member" },
-    { name: "Ken", role: "Build Member" },
-    { name: "Ethan", role: "Build Member" }
+    { name: "Vineeth", role: "Build Co-Captain" },
+    { name: "Gowtham", role: "Builder" },
+    { name: "Jack", role: "Builder" },
+    { name: "Ken", role: "Builder" },
+    { name: "Vismay", role: "Builder" },
+    { name: "Zander", role: "Builder" },
   ];
+
+  const MemberCard = ({ member }: { member: { name: string; role: string } }) => (
+    <div className="flex flex-col items-center space-y-3 p-6 rounded-lg bg-background/50 border border-primary/10 hover:border-primary/30 transition-colors">
+      <div className="text-center">
+        <h4 className="text-xl font-semibold text-foreground">{member.name}</h4>
+        <p className="text-sm text-primary">{member.role}</p>
+      </div>
+    </div>
+  );
 
   return (
     <section id="team" className="min-h-screen flex items-center justify-center px-6 py-20 bg-card">
@@ -33,43 +48,46 @@ const Team = () => {
         
         <div className="space-y-12">
           <div>
+            <h3 className="text-3xl font-bold text-primary mb-6 text-center">Captains</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {captains.map((member, index) => (
+                <MemberCard key={index} member={member} />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-primary mb-6 text-center">Leadership</h3>
+            <div className="grid md:grid-cols-1 max-w-xs mx-auto gap-6">
+              {leadership.map((member, index) => (
+                <MemberCard key={index} member={member} />
+              ))}
+            </div>
+          </div>
+
+          <div>
             <h3 className="text-3xl font-bold text-primary mb-6 text-center">Outreach</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {outreachTeam.map((member, index) => (
-                <div key={index} className="flex flex-col items-center space-y-3 p-6 rounded-lg bg-background/50 border border-primary/10 hover:border-primary/30 transition-colors">
-                  <div className="text-center">
-                    <h4 className="text-xl font-semibold text-foreground">{member.name}</h4>
-                    <p className="text-sm text-primary">{member.role}</p>
-                  </div>
-                </div>
+                <MemberCard key={index} member={member} />
               ))}
             </div>
           </div>
 
           <div>
             <h3 className="text-3xl font-bold text-primary mb-6 text-center">Programming</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {programmingTeam.map((member, index) => (
-                <div key={index} className="flex flex-col items-center space-y-3 p-6 rounded-lg bg-background/50 border border-primary/10 hover:border-primary/30 transition-colors">
-                  <div className="text-center">
-                    <h4 className="text-xl font-semibold text-foreground">{member.name}</h4>
-                    <p className="text-sm text-primary">{member.role}</p>
-                  </div>
-                </div>
+                <MemberCard key={index} member={member} />
               ))}
             </div>
           </div>
 
           <div>
             <h3 className="text-3xl font-bold text-primary mb-6 text-center">Build</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {buildTeam.map((member, index) => (
-                <div key={index} className="flex flex-col items-center space-y-3 p-6 rounded-lg bg-background/50 border border-primary/10 hover:border-primary/30 transition-colors">
-                  <div className="text-center">
-                    <h4 className="text-xl font-semibold text-foreground">{member.name}</h4>
-                    <p className="text-sm text-primary">{member.role}</p>
-                  </div>
-                </div>
+                <MemberCard key={index} member={member} />
               ))}
             </div>
           </div>

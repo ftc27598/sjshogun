@@ -10,10 +10,10 @@ const Footer = () => {
         <p className="text-muted-foreground mb-2">
           Reach us at{" "}
           <a
-            href="mailto:rojodojorobotics@gmail.com"
+            href="mailto:sjshogunrobotics@gmail.com"
             className="text-primary hover:text-primary/80 transition-colors red-glow-hover"
           >
-            rojodojorobotics@gmail.com
+            sjshogunrobotics@gmail.com
           </a>
         </p>
         <p className="text-sm text-muted-foreground">
