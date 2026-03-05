@@ -1,49 +1,102 @@
 import { useState, useEffect } from "react";
-import logoImage from "../../shogunlogo.png.png";
+import logoImage from "@/assets/sjs-logo.png";
+
+const navLinks = [
+  { id: "who-we-are", label: "Who We Are" },
+  { id: "about", label: "About" },
+  { id: "robots", label: "Robots" },
+  { id: "team", label: "Our Team" },
+  { id: "sponsors", label: "Partners" },
+];
+
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-  };
-  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"}`}>
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <img src={logoImage} alt="Saint John's Shogun Logo" className="h-10 w-10" />
-          <div className="text-2xl font-bold text-primary red-glow">SAINT JOHN'S SHOGUN</div>
-        </div>
-        
-        <div className="hidden md:flex items-center gap-8">
-          <button onClick={() => scrollToSection("who-we-are")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
-            Who We Are
-          </button>
-          <button onClick={() => scrollToSection("about")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
-            About
-          </button>
-          <button onClick={() => scrollToSection("robots")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
-            Robots
-          </button>
-          <button onClick={() => scrollToSection("team")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
-            Our Team
-          </button>
-          <button onClick={() => scrollToSection("sponsors")} className="text-foreground hover:text-primary transition-colors duration-300 red-glow-hover">
-            Partners
-          </button>
+
+  useEffect(() => {
+    const closeOnDesktop = () => {
+      if (window.innerWidth >= 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", closeOnDesktop);
+    return () => window.removeEventListener("resize", closeOnDesktop);
+  }, []);
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  return (
+    <nav
+      aria-label="Primary"
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
+        scrolled ? "border-b border-border bg-background/95 backdrop-blur-md" : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#main-content" className="flex items-center gap-3">
+          <img src={logoImage} alt="Saint John's Shogun Logo" className="h-10 w-10" loading="eager" decoding="async" />
+          <div className="text-lg font-bold text-primary red-glow md:text-2xl">SAINT JOHN'S SHOGUN</div>
+        </a>
+
+        <button
+          type="button"
+          className="rounded-md border border-border px-3 py-2 text-sm text-foreground md:hidden"
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-nav-links"
+          onClick={() => setMobileMenuOpen((open) => !open)}
+        >
+          <span className="sr-only">Toggle navigation menu</span>
+          Menu
+        </button>
+
+        <div className="hidden items-center gap-8 md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              className="text-foreground transition-colors duration-300 red-glow-hover hover:text-primary"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
-        <div className="text-muted-foreground">Team 27598</div>
+        <div className="hidden text-muted-foreground md:block">Team 27598</div>
       </div>
-    </nav>;
+
+      <div
+        id="mobile-nav-links"
+        className={`border-t border-border bg-background/95 px-6 py-4 backdrop-blur-md md:hidden ${
+          mobileMenuOpen ? "block" : "hidden"
+        }`}
+      >
+        <div className="flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={closeMobileMenu}
+              className="text-foreground transition-colors duration-300 red-glow-hover hover:text-primary"
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="pt-2 text-sm text-muted-foreground">Team 27598</div>
+        </div>
+      </div>
+
+    </nav>
+  );
 };
+
 export default Navigation;

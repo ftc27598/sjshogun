@@ -1,8 +1,15 @@
-import heroImage from "@/assets/team-photo.png";
+import heroImage from "@/assets/hero-robot.jpg";
 const Hero = () => {
   return <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="SJ Shogun 2025-2026 Robot" className="w-full h-full object-cover object-bottom opacity-70" />
+        <img
+          src={heroImage}
+          alt="SJ Shogun robot on the field"
+          className="w-full h-full object-cover object-bottom opacity-70"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
         <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
       </div>
@@ -10,7 +17,7 @@ const Hero = () => {
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
           <span className="text-foreground">SAINT JOHN'S</span>{" "}
-          <span className="text-primary red-glow">SHŌGUN</span>
+          <span className="text-primary red-glow">SHOGUN</span>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto">
           Team 27598
