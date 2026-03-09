@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-robot.jpg";
+import heroImage from "@/assets/robot-2025.jpg";
 const Hero = () => {
   return <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
