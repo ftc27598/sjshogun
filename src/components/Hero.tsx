@@ -1,15 +1,6 @@
-import heroImage from "@/assets/robot-2025.jpg";
 const Hero = () => {
   return <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="SJ Shogun robot on the field"
-          className="w-full h-full object-cover object-bottom opacity-70"
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
         <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
       </div>
