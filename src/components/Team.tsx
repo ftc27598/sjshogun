@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 type TeamMember = {
   name: string;
   role: string;
@@ -6,7 +8,6 @@ type TeamMember = {
 type TeamSection = {
   title: string;
   members: TeamMember[];
-  gridClassName?: string;
 };
 
 const sections: TeamSection[] = [
@@ -14,14 +15,9 @@ const sections: TeamSection[] = [
     title: "Captains",
     members: [
       { name: "Ayan", role: "Captain" },
-      { name: "Jeremy", role: "Captain" },
+      { name: "Andy", role: "Captain" },
       { name: "Rushil", role: "Captain" },
     ],
-  },
-  {
-    title: "Leadership",
-    members: [{ name: "Kirpal", role: "Project Manager" }],
-    gridClassName: "mx-auto max-w-xs md:grid-cols-1",
   },
   {
     title: "Outreach",
@@ -29,56 +25,63 @@ const sections: TeamSection[] = [
       { name: "Anay", role: "Outreach" },
       { name: "Cyril", role: "Outreach" },
       { name: "Krish", role: "Outreach" },
+      { name: "Vihaan", role: "Outreach" },
     ],
   },
   {
     title: "Programming",
     members: [
-      { name: "Andy", role: "Programmer" },
+      { name: "Hexi", role: "Programmer" },
       { name: "Vihaan", role: "Programmer" },
-      { name: "David", role: "Programmer" },
+      { name: "Matt", role: "Programmer" },
     ],
   },
   {
     title: "Build",
     members: [
-      { name: "Vineeth", role: "Build Co-Captain" },
-      { name: "Gowtham", role: "Builder" },
-      { name: "Jack", role: "Builder" },
+      { name: "Vismay", role: "Build Co-Captain" },
       { name: "Ken", role: "Builder" },
-      { name: "Vismay", role: "Builder" },
+      { name: "Nick", role: "Builder" },
+      { name: "Arjun", role: "Builder" },
       { name: "Zander", role: "Builder" },
     ],
   },
 ];
 
 const MemberCard = ({ member }: { member: TeamMember }) => (
-  <div className="flex flex-col items-center space-y-3 rounded-lg border border-primary/10 bg-background/50 p-6 transition-colors hover:border-primary/30">
-    <div className="text-center">
-      <h4 className="text-xl font-semibold text-foreground">{member.name}</h4>
-      <p className="text-sm text-primary">{member.role}</p>
-    </div>
+  <div className="group rounded-xl border border-border bg-card p-5 text-center transition-all hover:-translate-y-1 hover:border-primary/40 hover:bg-card/80 hover:shadow-[0_0_25px_hsl(var(--primary)/0.15)]">
+    <h4 className="text-lg font-semibold text-foreground">{member.name}</h4>
+    <p className="font-sans text-sm text-primary">{member.role}</p>
   </div>
 );
 
 const Team = () => {
   return (
-    <section id="team" className="min-h-screen scroll-mt-24 flex items-center justify-center bg-card px-6 py-20">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="mb-12 text-center text-5xl font-bold text-foreground md:text-6xl">
-          Our <span className="text-primary red-glow">Team</span>
-        </h2>
+    <section id="team" className="scroll-mt-24 bg-background px-6 py-28">
+      <div className="mx-auto max-w-6xl">
+        <Reveal>
+          <h2 className="mb-16 text-center text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
+            Our <span className="text-primary red-glow">Team</span>
+          </h2>
+        </Reveal>
 
-        <div className="space-y-12">
-          {sections.map((section) => (
-            <div key={section.title}>
-              <h3 className="mb-6 text-center text-3xl font-bold text-primary">{section.title}</h3>
-              <div className={`grid gap-6 md:grid-cols-3 ${section.gridClassName ?? ""}`}>
-                {section.members.map((member) => (
-                  <MemberCard key={member.name} member={member} />
-                ))}
+        <div className="space-y-14">
+          {sections.map((section, sectionIndex) => (
+            <Reveal key={section.title} delay={sectionIndex * 60}>
+              <div>
+                <div className="mb-6 flex items-center gap-4">
+                  <h3 className="whitespace-nowrap text-xl font-bold uppercase tracking-wide text-primary">
+                    {section.title}
+                  </h3>
+                  <span className="h-px flex-1 bg-border" aria-hidden="true" />
+                </div>
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+                  {section.members.map((member) => (
+                    <MemberCard key={`${section.title}-${member.name}`} member={member} />
+                  ))}
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

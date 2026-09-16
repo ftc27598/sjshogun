@@ -2,44 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 0 84% 60%;
+    --primary: 356 85% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 13%;
+    --muted-foreground: 220 5% 62%;
 
-    --accent: 0 84% 60%;
+    --accent: 356 85% 52%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 356 85% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 84% 60%;
+    --border: 0 0% 17%;
+    --input: 0 0% 17%;
+    --ring: 356 85% 52%;
 
     --radius: 0.5rem;
 
-    --red-glow: 0 84% 60%;
-    --red-intense: 0 100% 50%;
+    --red-glow: 356 85% 52%;
+    --red-intense: 356 100% 46%;
+    --steel: 210 12% 78%;
   }
 }
 
@@ -49,7 +50,14 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display uppercase tracking-wide;
   }
 
   html {
@@ -68,8 +76,12 @@ All colors MUST be HSL.
     scroll-behavior: auto;
   }
 
-  .animate-fade-slide-in {
-    animation: none;
+  .animate-fade-slide-in,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
@@ -81,5 +93,26 @@ All colors MUST be HSL.
   .red-glow-hover:hover {
     text-shadow: 0 0 30px hsl(var(--red-glow) / 0.8);
     transition: text-shadow 0.3s ease;
+  }
+
+  .text-steel {
+    color: hsl(var(--steel));
+  }
+
+  .carbon-bg {
+    background-image:
+      radial-gradient(circle at 15% 10%, hsl(var(--primary) / 0.08), transparent 45%),
+      radial-gradient(circle at 85% 90%, hsl(var(--steel) / 0.06), transparent 40%);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

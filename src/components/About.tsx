@@ -1,62 +1,77 @@
+import { Target, Eye, Heart, TrendingUp } from "lucide-react";
+import Reveal from "@/components/Reveal";
+
 const values = ["Compassion", "Zeal", "Trust", "Simplicity", "Humility"];
+
+const impactStats = [
+  { value: "600+", label: "Students & FTC Members" },
+  { value: "200K+", label: "Viewers Online" },
+  { value: "275+", label: "Families Impacted" },
+  { value: "200,950+", label: "Total Impacted" },
+];
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen scroll-mt-24 flex items-center justify-center bg-card px-6 py-20">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="mb-12 text-center text-5xl font-bold text-foreground md:text-6xl">
-          Our <span className="text-primary red-glow">Story</span>
-        </h2>
+    <section id="about" className="scroll-mt-24 border-y border-border bg-card px-6 py-28">
+      <div className="mx-auto max-w-6xl">
+        <Reveal>
+          <h2 className="mb-16 text-center text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
+            Our <span className="text-primary red-glow">Story</span>
+          </h2>
+        </Reveal>
 
-        <div className="grid gap-12 md:grid-cols-2">
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-primary">Mission</h3>
-            <p className="leading-relaxed text-muted-foreground">
-              Our mission at Saint John's Shogun is to design and build innovative robots while creating a lasting
-              impact through outreach. We aim to combine engineering excellence with meaningful community engagement,
-              as well as building strong connections across the engineering, science, and technology communities.
-            </p>
-          </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          <Reveal delay={0} className="h-full">
+            <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-background/60 p-8 transition-colors hover:border-primary/30">
+              <Target className="h-7 w-7 text-primary" aria-hidden="true" />
+              <h3 className="text-xl font-semibold text-foreground">Mission</h3>
+              <p className="font-sans leading-relaxed text-muted-foreground">
+                To design and build innovative robots while creating a lasting impact through outreach&mdash;combining
+                engineering excellence with meaningful community engagement.
+              </p>
+            </div>
+          </Reveal>
 
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-primary">Vision</h3>
-            <p className="leading-relaxed text-muted-foreground">
-              To be recognized as a leading team in FTC, setting new standards for FIRST Robotics, collaborative
-              problem-solving, and inspiring future generations to pursue careers in science, technology, engineering,
-              and mathematics.
-            </p>
-          </div>
+          <Reveal delay={80} className="h-full">
+            <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-background/60 p-8 transition-colors hover:border-primary/30">
+              <Eye className="h-7 w-7 text-primary" aria-hidden="true" />
+              <h3 className="text-xl font-semibold text-foreground">Vision</h3>
+              <p className="font-sans leading-relaxed text-muted-foreground">
+                To be recognized as a leading FTC team, setting new standards for collaborative problem-solving and
+                inspiring the next generation to pursue STEM.
+              </p>
+            </div>
+          </Reveal>
 
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-primary">Values</h3>
-            <ul className="list-inside list-disc space-y-3 text-muted-foreground marker:text-primary">
-              {values.map((value) => (
-                <li key={value}>{value}</li>
-              ))}
-            </ul>
-          </div>
+          <Reveal delay={0} className="h-full">
+            <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-background/60 p-8 transition-colors hover:border-primary/30">
+              <Heart className="h-7 w-7 text-primary" aria-hidden="true" />
+              <h3 className="text-xl font-semibold text-foreground">Values</h3>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 font-sans text-muted-foreground">
+                {values.map((value) => (
+                  <li key={value} className="flex items-center gap-2">
+                    <span className="h-1 w-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    {value}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
 
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold text-primary">Impact</h3>
-            <div className="mb-4 grid grid-cols-2 gap-4">
-              <div className="rounded-lg border border-primary/20 bg-primary/10 p-3 text-center">
-                <div className="text-2xl font-bold text-primary">600+</div>
-                <div className="text-sm text-muted-foreground">Students &amp; FTC Members</div>
-              </div>
-              <div className="rounded-lg border border-primary/20 bg-primary/10 p-3 text-center">
-                <div className="text-2xl font-bold text-primary">200K+</div>
-                <div className="text-sm text-muted-foreground">Viewers Online</div>
-              </div>
-              <div className="rounded-lg border border-primary/20 bg-primary/10 p-3 text-center">
-                <div className="text-2xl font-bold text-primary">275+</div>
-                <div className="text-sm text-muted-foreground">Families Impacted</div>
-              </div>
-              <div className="rounded-lg border border-primary/20 bg-primary/10 p-3 text-center">
-                <div className="text-2xl font-bold text-primary">200,950+</div>
-                <div className="text-sm text-muted-foreground">Total Impacted</div>
+          <Reveal delay={80} className="h-full">
+            <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-background/60 p-8 transition-colors hover:border-primary/30">
+              <TrendingUp className="h-7 w-7 text-primary" aria-hidden="true" />
+              <h3 className="text-xl font-semibold text-foreground">Impact</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {impactStats.map((stat) => (
+                  <div key={stat.label} className="rounded-lg bg-primary/5 p-3 text-center">
+                    <div className="font-display text-xl font-bold text-primary">{stat.value}</div>
+                    <div className="font-sans text-xs text-muted-foreground">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
