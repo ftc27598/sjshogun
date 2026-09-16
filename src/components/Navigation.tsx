@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logoImage from "@/assets/sjs-logo.png";
 
 const navLinks = [
@@ -69,6 +70,12 @@ const Navigation = () => {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/hackshogun"
+            className="rounded-full bg-primary/10 px-3 py-1.5 text-sm font-semibold text-primary ring-1 ring-primary/20 transition-colors hover:bg-primary/20"
+          >
+            HackShogun
+          </Link>
         </div>
 
         <div className="hidden text-muted-foreground md:block">Team 27598</div>
@@ -91,6 +98,13 @@ const Navigation = () => {
               {link.label}
             </a>
           ))}
+          <Link
+            to="/hackshogun"
+            onClick={closeMobileMenu}
+            className="font-semibold text-primary transition-colors red-glow-hover hover:text-primary/80"
+          >
+            HackShogun
+          </Link>
           <div className="pt-2 text-sm text-muted-foreground">Team 27598</div>
         </div>
       </div>

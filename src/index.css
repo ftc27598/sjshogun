@@ -67,6 +67,10 @@ All colors MUST be HSL.
   html {
     scroll-behavior: auto;
   }
+
+  .animate-fade-slide-in {
+    animation: none;
+  }
 }
 
 @layer utilities {
