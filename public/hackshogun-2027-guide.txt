@@ -1,0 +1,720 @@
+HackShogun 2027
+Official Tournament Master Document & Hacker Guide
+Theme: #Tech4Tomorrow
+Event Window: Friday, January 15, 2027 at 5:00 PM EST to Sunday, January 17, 2027 at 5:00 PM EST
+Format: 100% Digital / Discord-Based
+Participation: Individual Competition Only
+Audience: Beginner-Friendly, Ages 13–18
+Registration: Free
+Official Discord: https://discord.gg/pMh7hK8eAm
+1. Welcome to HackShogun
+Welcome to HackShogun 2027.
+HackShogun is a digital, beginner-friendly technology competition for students ages 13–18. Over one weekend, every participant will independently identify a real-world problem, design a solution, build a working technology project and present that project to a panel of judges.
+The 2027 theme is:
+#Tech4Tomorrow
+Your challenge is to use technology to solve a problem that could help create a better tomorrow.
+Your project may address health, accessibility, education, transportation, sustainability, robotics, communication, public safety, productivity, science or another meaningful problem.
+You do not need to be an experienced programmer to participate.
+HackShogun is designed to reward creativity, problem-solving, technical growth, execution and real-world impact.
+This document is the official HackShogun rulebook and participant guide.
+It contains the rules governing:
+Eligibility
+Project requirements
+Originality
+GitHub usage
+Artificial intelligence tools
+Submission requirements
+Video demonstrations
+Event attendance
+Schedule
+Judging
+Finalist selection
+Academic integrity
+Participant conduct
+Technical issues
+Participants are responsible for understanding this document before the competition begins.
+Official announcements posted by HackShogun administrators during the competition may clarify these rules.
+2. Core Competition Format
+HackShogun is an individual competition.
+Every participant must develop and submit their own project.
+2.1 No Teams
+Teams are not permitted.
+Participants may not:
+Combine submissions
+Share one project
+Divide development work between multiple competitors
+Submit substantially identical projects
+Have another participant write portions of their project
+Present a collaborative project as individual work
+Participants may discuss ideas, attend workshops and help one another understand general technical concepts.
+However, the submitted project itself must represent the participant's own work.
+Each participant receives their own:
+Submission
+GitHub repository
+Project writeup
+Demo video
+Judging score
+3. Eligibility
+Participants must:
+Be between 13 and 18 years old during HackShogun
+Complete official registration
+Join the HackShogun Discord server
+Attend the required opening ceremony
+Follow the HackShogun Code of Conduct
+Submit an individual project
+Submit all required materials before the deadline
+No prior hackathon experience is required.
+No prior programming experience is required.
+Participants may attend from any school unless otherwise stated in official registration materials.
+4. Mandatory Opening Ceremony
+Attendance at the HackShogun opening ceremony is required for every participant.
+The opening ceremony begins:
+Friday, January 15 at 5:00 PM EST
+Participants should join the designated Discord Stage before the scheduled start.
+The opening ceremony will include:
+Official welcome
+#Tech4Tomorrow theme introduction
+Competition rules
+Originality requirements
+Submission instructions
+GitHub Classroom instructions
+Judging criteria
+Video requirements
+Schedule overview
+FIRST Robotics introduction
+FTC demonstration
+Sponsor and partner recognition
+Final participant questions
+Official event kickoff
+A short orientation presentation or video may also be shown.
+Participants are expected to remain for the full opening ceremony.
+Failure to attend without prior approval from HackShogun administrators may make a participant ineligible to submit a judged project.
+5. The #Tech4Tomorrow Challenge
+Every participant must build a technology-based project connected to the theme:
+Tech 4 Tomorrow
+The theme is intentionally broad.
+Your project should identify a real problem and demonstrate how technology could help address it.
+Projects may include:
+Websites
+Web applications
+Mobile applications
+Desktop software
+Artificial intelligence tools
+Machine learning projects
+Robotics systems
+Hardware prototypes
+Engineering projects
+Data analysis systems
+Educational technology
+Accessibility technology
+Environmental technology
+Health technology
+Productivity tools
+Games with a meaningful real-world purpose
+Other technology-based solutions
+A project does not need to be commercially viable or completely finished.
+However, judges must be able to understand:
+What problem you identified
+Who experiences that problem
+What you built
+How your project works
+Why your approach could be useful
+What you personally accomplished during HackShogun
+
+6. Project Originality Rules
+6.1 Fresh Development
+The primary project must be developed during HackShogun.
+Participants may plan general ideas beforehand.
+Participants may research technologies beforehand.
+Participants may learn frameworks beforehand.
+However, participants may not enter the competition with a substantially completed project.
+Projects previously created for:
+School assignments
+Previous hackathons
+Personal portfolios
+Competitions
+Research projects
+Clubs
+Businesses
+Other programs
+may not simply be resubmitted.
+6.2 Existing Code
+Participants may use standard boilerplate, libraries, starter templates and automatically generated project scaffolding.
+Examples include:
+create-react-app
+Next.js starters
+Vite
+Flask project structures
+Django starters
+Tailwind templates
+Standard game engine project files
+Package manager initialization files
+However, substantial project-specific functionality must be created during HackShogun.
+If any meaningful code existed before the event, it must be disclosed.
+6.3 Open-Source Resources
+Participants may use:
+Open-source libraries
+Frameworks
+SDKs
+Public APIs
+Public datasets
+Open-source models
+Public code examples
+Documentation
+Tutorials
+These resources must be used as building blocks rather than substitutes for the participant's own work.
+Major external technologies should be disclosed in the submission.
+
+7. Artificial Intelligence Policy
+Artificial intelligence tools are permitted.
+Examples include:
+ChatGPT
+Claude
+Gemini
+GitHub Copilot
+Cursor
+Codex
+AI coding assistants
+AI design tools
+AI image generation tools
+AI debugging tools
+Using AI does not automatically reduce a participant's score.
+However, participants remain responsible for their project.
+7.1 AI Disclosure
+Participants must disclose meaningful use of AI during development.
+Examples include using AI to:
+Generate code
+Debug code
+Design architecture
+Generate graphics
+Create written content
+Build datasets
+Develop algorithms
+Generate UI components
+Minor use such as asking for syntax help does not require extensive documentation.
+7.2 Understanding Your Own Project
+Participants must be capable of explaining their own submission.
+Judges may ask:
+What does this function do?
+Why did you choose this framework?
+How does your database work?
+How does your API request work?
+Why did you structure the project this way?
+Which portions did AI help generate?
+What technical problem did you personally solve?
+A participant who cannot reasonably explain substantial portions of their own project may receive reduced technical scores or be referred for a code-integrity review.
+
+8. GitHub Classroom Requirements
+Every participant must use the official HackShogun GitHub Classroom.
+Participants will receive instructions for accepting their individual repository.
+Each participant must develop their project inside that repository.
+8.1 Commit History
+Your Git history should demonstrate active development during the event.
+Participants should:
+Commit throughout the weekend
+Use descriptive commit messages
+Push changes regularly
+Avoid uploading the entire project only at the deadline
+Examples of useful commit messages include:
+created authentication page
+added weather API integration
+fixed mobile navigation
+implemented database schema
+added recommendation algorithm
+Avoid meaningless commit messages such as:
+stuff
+update
+final
+asdf
+
+8.2 Integrity Review
+The following may trigger an additional review:
+A repository created almost entirely in one final commit
+Large amounts of unexplained code appearing suddenly
+Commit timestamps inconsistent with the competition
+Code copied from another participant
+Code copied from an existing project without disclosure
+Repository history intentionally deleted
+A participant being unable to explain major portions of their repository
+An integrity review does not automatically mean a participant violated the rules.
+Organizers may ask the participant to explain their development process.
+
+9. Repository Expectations
+Your GitHub repository should be organized enough for a technical judge to inspect it.
+At minimum, your repository should contain:
+Your project source code
+Relevant assets
+Required configuration files
+A README
+The README should preferably explain:
+Project name
+Problem being addressed
+What the project does
+How to run the project
+Main technologies used
+Important dependencies
+Do not publicly upload private API keys, passwords, tokens or other credentials.
+Use environment variables where appropriate.
+
+10. The HackShogun Submission System
+The official submission will be completed through the HackShogun Google Form.
+Participants should prepare written answers in a separate Google Doc before copying them into the submission form.
+Do not rely on the Google Form to preserve unfinished responses.
+The submission consists of:
+Participant information
+Video demonstration
+Public source code repository
+Four written project responses
+
+11. Participant Information
+The submission form will request identifying information including:
+Full Name
+Use your real name as registered for HackShogun.
+Email Address
+Provide an email address you actively monitor.
+Project Name
+Provide a short title for your project.
+Your project name may be displayed during judging and HackShogun recognition materials.
+
+12. Video Demo Submission
+Every participant must submit a recorded project demonstration.
+12.1 Length
+The video must be between:
+3 minutes and 5 minutes
+Videos shorter than 3 minutes may fail to provide enough information for complete judging.
+Judges will not be required to review content after the 5-minute mark.
+Critical information should appear within the official time limit.
+13. What Your Video Should Show
+Your video should clearly demonstrate:
+Your project name
+The problem you are solving
+Who the intended user is
+Your working project
+The major features
+How a user interacts with it
+The most important technical component
+What you built during HackShogun
+The majority of the video should show the actual project.
+Do not submit only:
+Slides
+Mockups
+Animations
+Concept art
+Figma screens
+A verbal description
+A brief presentation is acceptable, but judges need to see the actual working prototype.
+
+14. Video File Requirements
+Upload your video to a Google Drive folder.
+Recommended formats:
+.mp4
+.mov
+Your submission form will request the link to the Google Drive folder containing the video.
+The folder permission must be:
+Anyone with the link can view
+Judges must be able to access the file without requesting permission.
+
+15. Important Google Drive Warning
+School-managed Google accounts frequently restrict external sharing.
+A file may appear accessible to you while still being unavailable to HackShogun judges.
+For this reason, participants should test their link before submission.
+Recommended procedure:
+Copy the Google Drive link
+Open an Incognito or Private browser window
+Make sure you are signed out of Google
+Paste the link
+Confirm the video loads without requesting permission
+If the judge cannot access the video, the video cannot be evaluated.
+A personal Google account may be preferable when a school account prevents public sharing.
+
+16. Source Code Submission
+Every participant must submit the URL of their project repository.
+The repository must be accessible to HackShogun judges.
+The repository should contain the latest version of the submitted project.
+Participants should push their final code before submitting the Google Form.
+
+17. Written Submission
+The written submission consists of four sections.
+The combined maximum is approximately 2,000 words.
+The goal is not to reach the maximum.
+Clear, specific writing is stronger than filler.
+18. Field 1: Mission & Problem Statement
+Maximum: 400 words
+Prompt:
+What problem does your project solve? Why does this issue matter, and who is your target user?
+Your response should address:
+What problem exists
+Why the problem matters
+Who is affected
+Who your target user is
+Why you selected this problem
+How the problem relates to Tech 4 Tomorrow
+Be specific.
+Instead of writing:
+Students struggle with education.
+A stronger explanation might identify a particular student population, particular difficulty and why existing tools do not fully solve the issue.
+
+19. Field 2: Solution & User Experience
+Maximum: 600 words
+Prompt:
+How does your application, website or project work? Walk the judges through the user journey from start to finish.
+Explain exactly what happens when a user interacts with your project.
+Consider describing:
+What the user sees first
+What information they provide
+What actions they can take
+What the system does
+What output the user receives
+How the major features connect
+Do not simply list features.
+Explain how the project functions as a complete experience.
+For hardware projects, describe the physical interaction and system behavior.
+20. Field 3: Technical Architecture
+Maximum: 600 words
+Prompt:
+What programming languages, libraries or APIs did you use? How is your GitHub repository structured?
+This is your opportunity to explain how your project works technically.
+You may discuss:
+Programming languages
+Frameworks
+Databases
+APIs
+Libraries
+AI models
+Hosting systems
+Hardware
+Development tools
+Frontend architecture
+Backend architecture
+Data storage
+Authentication
+Repository organization
+Major algorithms
+Important technical decisions
+You should also describe at least one meaningful technical challenge you encountered.
+Explain:
+What went wrong
+Why it was difficult
+How you investigated it
+How you solved or worked around it
+Judges are interested in your development process, not only the final result.
+
+21. Field 4: Innovation & Future Scope
+Maximum: 400 words
+Prompt:
+What makes your project unique or better than existing solutions? If you had another month to build this, what features would you add next?
+Discuss:
+What differentiates your approach
+What existing solutions already do
+Where your project improves or changes that approach
+Your project's strongest feature
+Current limitations
+What you would improve next
+What the project could become with more development time
+Do not claim your project is completely unique unless you can support that claim.
+Judges value realistic self-evaluation.
+
+22. Master Schedule
+Friday, January 15
+5:00 PM EST
+Mandatory Opening Ceremony
+All registered participants must attend.
+The ceremony will cover:
+Theme
+Rules
+GitHub Classroom
+Submission system
+Judging
+FIRST Robotics
+Participant Q&A
+Approximately 5:30 PM EST
+Build Period Begins
+Participants may begin full development.
+The exact opening schedule may shift slightly depending on announcements and Q&A.
+
+23. Saturday, January 16
+Saturday is the primary development day.
+Participants should expect optional programming throughout the day.
+Possible activities include:
+Technical workshops
+Beginner coding workshops
+Engineering sessions
+AI workshops
+GitHub help
+Mentor office hours
+Project development advice
+Presentation guidance
+FIRST Robotics programming
+Exact times will be posted in Discord.
+Participants are not required to attend every optional workshop.
+
+24. Sunday, January 17
+Participants should use Sunday to:
+Complete core functionality
+Test their project
+Clean their repository
+Record their demo
+Upload the demo
+Finish written responses
+Test submission links
+Submit the Google Form
+Do not plan to finish everything during the final hour.
+Uploading video can take significant time.
+25. Submission Deadline
+Sunday, January 17 at 5:00 PM EST
+The submission deadline is firm.
+Your submission should be complete before 5:00 PM.
+Do not wait until 4:59 PM to submit.
+The following are not normally valid reasons for a late submission:
+Slow video upload
+Forgotten GitHub push
+Incorrect Drive permissions
+Browser problems
+Accidentally closing the form
+Starting the submission too late
+Personal device issues
+A widespread outage affecting an official required platform may be handled separately by HackShogun administrators.
+Any official deadline modification will be announced through Discord.
+26. Code Freeze
+At the submission deadline, development is considered complete.
+Participants should not materially modify their judged project after the deadline.
+Minor repository changes requested by HackShogun administrators for accessibility or technical review may be allowed.
+Attempting to substantially improve a submission after the deadline may result in disqualification.
+
+27. Judging Framework
+Projects will be evaluated across five primary categories.
+Each category focuses on a different component of the project.
+
+28. Innovation & Creativity
+Judges will consider:
+Originality of the concept
+Creativity of the approach
+Thoughtfulness of the solution
+Whether the project approaches the problem in an interesting way
+Innovation does not necessarily mean inventing something that has never existed before.
+Improving an existing idea in a meaningful way can also demonstrate innovation.
+
+29. Technical Execution
+Judges will consider:
+Technical architecture
+Appropriate use of technologies
+Integration between components
+Code organization
+Technical problem-solving
+Difficulty relative to the participant's experience
+Understanding of the implementation
+A larger codebase does not automatically receive a higher score.
+Technical choices should serve the project.
+30. Functionality & Execution
+Judges will evaluate whether the prototype actually works.
+They may consider:
+Reliability
+Completeness
+Whether core features function
+Whether the demo matches the written description
+Whether the participant accomplished the project's primary objective
+An ambitious project with many unfinished features may score lower than a smaller project with a polished working core.
+31. Presentation & Communication
+Judges will consider:
+Clarity
+Organization
+Video structure
+Explanation of technical concepts
+Ability to communicate the problem
+Quality of the demonstration
+Ability to explain project decisions
+Production quality is not the primary focus.
+A participant does not need professional video editing equipment.
+Clear explanation matters more than cinematic editing.
+32. Impact & Usefulness
+Judges will consider:
+Importance of the selected problem
+Relevance to the target user
+Practical usefulness
+Connection to Tech 4 Tomorrow
+Potential real-world value
+Whether the solution meaningfully addresses the stated problem
+Projects do not need millions of potential users.
+A solution designed for a small but clearly defined population can still demonstrate strong impact.
+33. Preliminary Judging
+After submissions close, judges will review:
+Video demonstration
+Written responses
+GitHub repository
+Commit history
+Project functionality
+Judges may verify statements made in the submission against the actual repository and demonstration.
+34. Finalist Selection
+Following preliminary judging, the highest-scoring submissions may advance to a finalist evaluation.
+HackShogun currently intends to select approximately:
+Top 9 Finalists
+The exact number may be adjusted if required by participation levels or judging logistics.
+Finalists will receive instructions through official HackShogun communication channels.
+35. Finalist Evaluation
+Finalists may be invited to a private live evaluation with HackShogun judges and administrators.
+The finalist should be prepared to:
+Demonstrate the project live
+Explain the architecture
+Discuss major technical decisions
+Answer questions about the problem
+Explain development challenges
+Discuss AI usage
+Discuss external libraries
+Explain major portions of the source code
+Describe future development plans
+This stage allows judges to distinguish between projects that received similar preliminary scores.
+36. Judge Questions
+Participants should assume judges may ask detailed questions.
+Examples include:
+Why did you choose this problem?
+Why did you use this framework?
+How does this feature work internally?
+What did you personally find most difficult?
+What would break if this API became unavailable?
+How did you use AI?
+What part of this project are you most satisfied with?
+What would you change if you restarted?
+What existing solution is most similar to yours?
+What would you build next?
+There are no predetermined correct answers.
+Judges want to understand your reasoning.
+37. FIRST Robotics at HackShogun
+HackShogun is organized by SJ Shogun and includes a FIRST outreach component.
+Participants will be introduced to programs within FIRST Robotics, including FIRST Tech Challenge.
+HackShogun may include:
+FTC robot demonstrations
+Information about FIRST
+Information about joining local teams
+Information about starting a team
+Opportunities to speak with FIRST participants
+Resources for students interested in robotics
+Participation in FIRST is not required to compete in HackShogun.
+38. Discord Rules
+Discord is the primary communication platform for HackShogun.
+Participants are responsible for monitoring:
+Announcements
+Schedule updates
+Submission information
+Workshop information
+Judging notices
+Technical alerts
+Major event updates will be posted through official organizer channels.
+
+39. Participant Conduct
+All participants must behave respectfully.
+The following may result in removal from HackShogun:
+Harassment
+Bullying
+Hate speech
+Threats
+Deliberate disruption
+Sharing inappropriate material
+Impersonating another participant
+Attempting to sabotage another submission
+Plagiarism
+Cheating
+Repeated violation of organizer instructions
+Participants should report serious concerns to HackShogun administrators.
+40. Safety and Privacy
+HackShogun includes participants under 18.
+Do not publicly post sensitive personal information.
+This includes:
+Home addresses
+Phone numbers
+Passwords
+Private API keys
+Financial information
+School login credentials
+Personal identification documents
+Participants should communicate through official HackShogun spaces whenever possible.
+41. Disqualification
+A participant may be disqualified for serious violations including:
+Submitting another person's work
+Collaborating on a supposedly individual submission
+Submitting a previously completed project without disclosure
+Manipulating Git history
+Intentionally misleading judges
+Falsifying development information
+Violating the code of conduct
+Submitting malicious software
+Attempting to harm HackShogun infrastructure or other competitors
+Disqualification decisions are made by HackShogun administrators.
+42. Allowed Collaboration
+HackShogun is solo-only, but this does not mean participants must work without learning from others.
+Allowed:
+Asking a mentor how a programming concept works
+Asking for debugging advice
+Attending workshops
+Reading documentation
+Asking another participant a general technical question
+Using Stack Overflow or similar technical resources
+Using AI
+Following tutorials
+Discussing project ideas
+Not allowed:
+Having someone write substantial project code for you
+Sharing code with another competitor
+Two competitors building one project
+Splitting a project between multiple participants
+Submitting the same codebase under multiple names
+Having a mentor build features for you
+43. Technical Failure Policy
+Participants are responsible for their own:
+Computer
+Internet connection
+GitHub account
+Google Drive upload
+Development environment
+Software
+Submission timing
+However, HackShogun administrators may modify procedures if a widespread service outage affects a required official platform.
+Examples include a major outage involving:
+GitHub
+Discord
+Google Forms
+Google Drive
+Any exception will be announced publicly.
+44. Submission Checklist
+Before submitting, verify every item below.
+Participant Information
+My full name is correct
+My email address is correct
+My project name is correct
+GitHub
+My latest code is pushed
+My repository is accessible
+My repository contains my source code
+My commit history reflects my development
+My README explains the project
+I removed private API keys and credentials
+Video
+My video is at least 3:00 minutes
+My video is no longer than 5:00 minutes
+My video demonstrates the actual project
+My video explains the problem
+My video explains the important features
+My video is uploaded successfully
+Google Drive
+My folder is set to "Anyone with the link can view"
+I tested the link while logged out
+The video plays without requesting access
+Written Submission
+Problem statement completed
+User journey completed
+Technical architecture completed
+Innovation and future scope completed
+Significant external tools are disclosed
+Significant AI usage is disclosed
+Final Verification
+All links work
+My submission accurately represents what I built
+I submitted before 5:00 PM EST
+45. Important Links
+Official Discord
+https://discord.gg/pMh7hK8eAm
+Official Submission Form
+https://forms.gle/KmPCB5GrciDG8S7v8
+Workshop Schedule
+TBd
+HackShogun Website
+https://sjshogun.com/

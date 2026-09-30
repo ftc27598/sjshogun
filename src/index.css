@@ -82,10 +82,17 @@
   .team-banner-caption { @apply absolute bottom-0 left-0 bg-primary px-4 py-2 font-mono text-[9px] uppercase tracking-widest text-white; }
   .partner-cell { @apply transition-colors duration-200 hover:bg-[#1b1b1b]; }
   .footer-email { overflow-wrap: anywhere; }
-  .event-title { @apply font-display text-[clamp(4.8rem,9vw,10rem)] font-bold uppercase leading-[0.8] tracking-[-0.06em]; overflow-wrap: anywhere; }
-  .event-art { background: repeating-linear-gradient(135deg, transparent 0 20px, #242424 21px 22px); }
-  .event-art > span { @apply absolute bottom-5 left-5 font-display text-[clamp(5rem,12vw,12rem)] font-bold leading-none tracking-tighter text-primary; }
-  .event-art-cross { @apply absolute right-7 top-1 font-display text-[9rem] font-light leading-none text-foreground/30; }
+  .hack-hero { background: radial-gradient(ellipse at 18% 30%, #1a1011 0%, #0d0d0d 52%, #0d0d0d 100%); }
+  .hack-title { @apply font-display text-[clamp(5.5rem,11vw,11.5rem)] font-bold uppercase leading-[0.72] tracking-[-0.055em]; }
+  .hack-theme { @apply inline-block border-l-4 border-primary pl-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl; }
+  .hack-outline-button { @apply inline-flex min-h-12 items-center justify-center gap-5 border border-foreground/50 px-5 py-3 text-xs font-bold uppercase tracking-wider text-foreground transition-[background-color,transform] duration-200 hover:bg-white/10 active:scale-[0.98]; }
+  .hack-outline-button svg, .hack-light-button svg { @apply transition-transform duration-200; }
+  .hack-outline-button:hover svg, .hack-light-button:hover svg { transform: translate(2px,-2px); }
+  .hack-poster { background: linear-gradient(160deg, #991e2a, #5c121b 65%, #250d11); }
+  .hack-poster::before { content: ""; position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 52px 52px; }
+  .hack-poster-number { @apply mb-6 block font-display text-[clamp(12rem,27vw,28rem)] font-bold leading-[0.7] tracking-[-0.09em]; }
+  .hack-section-link { @apply border-b border-transparent pb-1 text-muted-foreground transition-colors duration-200 hover:border-primary hover:text-foreground; }
+  .hack-light-button { @apply inline-flex min-h-12 w-fit items-center justify-center gap-5 bg-foreground px-5 py-3 text-xs font-bold uppercase tracking-wider text-background transition-[background-color,transform] duration-200 hover:bg-white active:scale-[0.98]; }
   .skip-link { @apply sr-only z-50 bg-primary px-4 py-2 text-white focus:fixed focus:left-4 focus:top-4 focus:not-sr-only; }
 }
 
@@ -105,7 +112,7 @@
 }
 @media (max-width: 420px) {
   .hero-title { font-size: clamp(3.55rem, 15vw, 4.7rem); }
-  .event-title { font-size: clamp(3.6rem, 16vw, 5rem); }
+  .hack-title { font-size: clamp(4.4rem, 22vw, 6rem); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

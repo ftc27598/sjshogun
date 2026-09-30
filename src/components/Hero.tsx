@@ -15,8 +15,8 @@ const Hero = () => (
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">Saint John's Robotics</p>
           <h1 className="hero-title">SHOGUN</h1>
           <p className="mt-6 max-w-md text-sm leading-7 text-muted-foreground">We're Saint John's Shogun, an FTC robotics team in Shrewsbury. We build, code, compete, and share robotics with our community.</p>
-          <Link to="/hackshogun" className="hack-promo mt-7 flex items-center justify-between gap-4" aria-label="HackShogun, our first hackathon, is coming soon. Learn more.">
-            <span><span className="eyebrow block text-primary">Our first hackathon / Coming soon</span><span className="hack-promo-title mt-2 block">HACKSHOGUN</span></span>
+          <Link to="/hackshogun" className="hack-promo mt-7 flex items-center justify-between gap-4" aria-label="HackShogun 2027, January 15 to 17, online. Learn more.">
+            <span><span className="eyebrow block text-primary">Jan 15-17, 2027 / Online</span><span className="hack-promo-title mt-2 block">HACKSHOGUN</span></span>
             <Arrow className="h-7 w-7 shrink-0" />
           </Link>
           <div className="mt-6 flex flex-wrap items-center gap-6">
