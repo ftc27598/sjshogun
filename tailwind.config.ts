@@ -15,7 +15,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Rajdhani", "sans-serif"],
+        display: ["Barlow Condensed", "sans-serif"],
         sans: ["Manrope", "sans-serif"],
       },
       colors: {

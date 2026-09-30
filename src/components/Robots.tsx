@@ -1,96 +1,53 @@
-import { Trophy } from "lucide-react";
 import robotImage2024 from "@/assets/robot-2024.jpg";
 import robotImage2025 from "@/assets/robot-2025.jpg";
 import Reveal from "@/components/Reveal";
 
-type Robot = {
-  year: string;
-  image: string;
-  alt: string;
-  blurb: string;
-  awards: string[];
-};
-
-const robots: Robot[] = [
+const robots = [
   {
-    year: "2025–26",
+    year: "2025-26",
+    title: "At FTC States",
     image: robotImage2025,
-    alt: "SJ Shogun 2025-2026 robot",
-    blurb: "Our current robot competing in the 2025–2026 season—currently competing at States.",
+    alt: "SJ Shogun 2025-2026 robot with competition awards",
+    blurb: "Our 2025-26 robot competed at States.",
     awards: ["Inspire Award", "Control Award", "Winning Alliance Award"],
   },
   {
-    year: "2024–25",
+    year: "2024-25",
+    title: "The Connect Award season",
     image: robotImage2024,
     alt: "SJ Shogun 2024-2025 robot",
-    blurb: "Our robot for the 2024–2025 season, where we won the Connect Award at Hawk Nest's Havoc Qualifier.",
-    awards: ["Connect Award – Community Outreach"],
+    blurb: "In the 2024-25 season, we won the Connect Award at Hawk Nest's Havoc Qualifier.",
+    awards: ["Connect Award for Community Outreach"],
   },
 ];
 
-const Robots = () => {
-  return (
-    <section id="robots" className="scroll-mt-24 bg-background px-6 py-28">
-      <div className="mx-auto max-w-6xl">
-        <Reveal>
-          <h2 className="mb-16 text-center text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
-            Our <span className="text-primary red-glow">Robots</span>
-          </h2>
-        </Reveal>
-
-        <div className="space-y-24">
-          {robots.map((robot, index) => (
-            <div
-              key={robot.year}
-              className={`grid items-center gap-10 md:grid-cols-2 md:gap-14 ${
-                index % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
-              }`}
-            >
-              <Reveal>
-                <div className="group relative overflow-hidden rounded-2xl border border-border shadow-2xl">
-                  <img
-                    src={robot.image}
-                    alt={robot.alt}
-                    className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  <div className="absolute left-4 top-4 rounded-full bg-background/80 px-3 py-1 font-display text-sm font-bold uppercase tracking-wide text-primary backdrop-blur-md">
-                    {robot.year}
-                  </div>
-                </div>
-              </Reveal>
-
-              <Reveal delay={100}>
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-bold text-foreground">Season {robot.year}</h3>
-                  <p className="font-sans leading-relaxed text-muted-foreground">{robot.blurb}</p>
-
-                  <div className="space-y-3">
-                    <h4 className="font-sans text-sm font-semibold uppercase tracking-wide text-foreground/70">
-                      Awards
-                    </h4>
-                    <div className="flex flex-wrap gap-2.5">
-                      {robot.awards.map((award) => (
-                        <div
-                          key={award}
-                          className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1.5"
-                        >
-                          <Trophy className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
-                          <span className="font-sans text-sm font-semibold text-primary">{award}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-          ))}
-        </div>
+const Robots = () => (
+  <section id="robots" className="section-space">
+    <div className="page-width">
+      <Reveal><div className="section-heading"><p className="section-label"><span>03</span> The robots</p><h2 className="section-title">Our robots</h2><p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground">Here are the robots we've brought to competition.</p></div></Reveal>
+      <Reveal><article className="coming-soon mt-14 grid items-center gap-5 border-y border-primary py-8 md:grid-cols-[1fr_0.85fr] md:gap-14">
+        <div className="coming-soon-art flex min-h-52 items-center justify-center overflow-hidden border border-border" aria-hidden="true"><span>26/27</span></div>
+        <div><p className="eyebrow text-primary">2026-2027 season</p><h3 className="robot-title mt-4">Coming soon</h3><p className="mt-4 max-w-md text-sm leading-7 text-muted-foreground">We'll add photos and details for the 2026-2027 robot when they're ready.</p></div>
+      </article></Reveal>
+      <div className="border-t border-border">
+        {robots.map((robot, index) => (
+          <Reveal key={robot.year} delay={index * 80}>
+            <article className={`robot-row grid gap-8 border-b border-border py-10 md:grid-cols-[1fr_0.85fr] md:items-center md:gap-14 ${index === 1 ? "alternate" : ""}`}>
+              <div className="robot-media">
+                <div className="mb-3 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground"><span>Machine / 0{index + 1}</span><span>FTC Season</span></div>
+                <div className="robot-image-wrap"><img src={robot.image} alt={robot.alt} className="robot-image" loading="lazy" decoding="async" /></div>
+              </div>
+              <div className="robot-info">
+                <p className="eyebrow text-primary">Season {robot.year}</p>
+                <h3 className="robot-title mt-4">{robot.title}</h3>
+                <p className="mt-6 max-w-md text-sm leading-7 text-muted-foreground">{robot.blurb}</p>
+                <div className="mt-8 border-t border-border pt-5"><p className="eyebrow text-muted-foreground">Awards</p><ul className="mt-4 space-y-3">{robot.awards.map((award) => <li key={award} className="flex items-center gap-3 text-sm"><span className="award-mark" aria-hidden="true" />{award}</li>)}</ul></div>
+              </div>
+            </article>
+          </Reveal>
+        ))}
       </div>
-    </section>
-  );
-};
-
+    </div>
+  </section>
+);
 export default Robots;

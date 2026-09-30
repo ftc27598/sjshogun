@@ -1,23 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Arrow from "@/components/Arrow";
 
-const NotFound = () => {
-  const location = useLocation();
-
-  return (
-    <main className="flex min-h-screen items-center justify-center bg-background px-6 text-foreground" role="main">
-      <div className="w-full max-w-lg rounded-xl border border-border bg-card p-10 text-center shadow-xl">
-        <p className="mb-2 text-sm tracking-wide text-muted-foreground">Route not found: {location.pathname}</p>
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-6 text-lg text-muted-foreground">The page you requested does not exist.</p>
-        <Link
-          to="/"
-          className="inline-block rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-        >
-          Return Home
-        </Link>
-      </div>
-    </main>
-  );
-};
-
+const NotFound = () => (
+  <div className="min-h-[100dvh] bg-background"><Navigation /><main className="page-width flex min-h-[65dvh] flex-col justify-center py-20"><p className="section-label"><span>404</span> Page not found</p><h1 className="section-title mt-8">Page not found</h1><p className="mt-5 max-w-lg text-muted-foreground">The page you requested does not exist.</p><Link to="/" className="action-button mt-8 w-fit">Return home <Arrow direction="right" /></Link></main><Footer /></div>
+);
 export default NotFound;

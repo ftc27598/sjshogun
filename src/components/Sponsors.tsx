@@ -1,6 +1,6 @@
-import { Mail } from "lucide-react";
 import northboroPizzaLogo from "@/assets/northboro-pizza-logo.png";
 import Reveal from "@/components/Reveal";
+import Arrow from "@/components/Arrow";
 
 const partners = [
   { name: "Coghlin Companies", logo: null },
@@ -9,60 +9,22 @@ const partners = [
   { name: "Saint John's Robotics Camp", logo: null },
 ];
 
-const Sponsors = () => {
-  return (
-    <section id="sponsors" className="scroll-mt-24 border-t border-border bg-card px-6 py-28">
-      <div className="mx-auto max-w-5xl text-center">
-        <Reveal>
-          <h2 className="mb-6 text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
-            Our <span className="text-primary red-glow">Partners</span>
-          </h2>
-        </Reveal>
-        <Reveal delay={80}>
-          <p className="mx-auto mb-16 max-w-2xl font-sans text-lg text-muted-foreground">
-            We&apos;re grateful for the support of our partners who make our mission possible. Their commitment to
-            STEM education and innovation drives our success.
-          </p>
-        </Reveal>
-
-        <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {partners.map((partner, index) => (
-            <Reveal key={partner.name} delay={index * 60}>
-              <div className="flex min-h-[140px] flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-background p-6 transition-all hover:-translate-y-1 hover:border-primary/40">
-                {partner.logo ? (
-                  <img
-                    src={partner.logo}
-                    alt={`${partner.name} logo`}
-                    className="max-h-16 max-w-full object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : null}
-                <div className="text-center font-sans font-semibold text-foreground">{partner.name}</div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal>
-          <div className="rounded-2xl border border-primary/20 bg-primary/5 px-6 py-12">
-            <h3 className="mb-3 text-2xl font-semibold text-foreground">Become a Partner</h3>
-            <p className="mx-auto mb-6 max-w-xl font-sans text-muted-foreground">
-              Join us in shaping the future of robotics and STEM education.
-            </p>
-            <a
-              href="mailto:dojorojorobotics@gmail.com"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-sans font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-              aria-label="Email SJ Shogun about partnership opportunities"
-            >
-              <Mail className="h-4 w-4" aria-hidden="true" />
-              Contact Us
-            </a>
-          </div>
-        </Reveal>
+const Sponsors = () => (
+  <section id="sponsors" className="section-space">
+    <div className="page-width">
+      <Reveal><div className="section-heading"><p className="section-label"><span>05</span> Our partners</p><h2 className="section-title">Thanks to our partners</h2><p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground">These partners support our team and its work in STEM education.</p></div></Reveal>
+      <div className="partner-grid mt-14 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-4">
+        {partners.map((partner, index) => <Reveal key={partner.name} delay={index * 50}><div className="partner-cell flex min-h-36 flex-col items-start justify-between gap-6 border-b border-r border-border p-6">
+          <span className="font-mono text-[10px] tracking-[0.2em] text-primary">0{index + 1} / PARTNER</span>
+          {partner.logo && <img src={partner.logo} alt="Northboro House of Pizza logo" className="h-12 max-w-40 object-contain" loading="lazy" decoding="async" />}
+          <span className="text-lg font-medium leading-tight">{partner.name}</span>
+        </div></Reveal>)}
       </div>
-    </section>
-  );
-};
-
+      <Reveal><div className="partner-cta mt-14 grid gap-7 border-t border-primary pt-8 md:grid-cols-[1fr_auto] md:items-end">
+        <div><p className="eyebrow text-primary">Become a partner</p><h3 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">Want to support the team?</h3><p className="mt-3 max-w-lg text-sm leading-7 text-muted-foreground">Email us if you'd like to work with Shogun.</p></div>
+        <a href="mailto:dojorojorobotics@gmail.com" className="action-button w-fit" aria-label="Email SJ Shogun about partnership opportunities">Contact us <Arrow /></a>
+      </div></Reveal>
+    </div>
+  </section>
+);
 export default Sponsors;

@@ -1,115 +1,66 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logoImage from "@/assets/sjs-logo.png";
+import Arrow from "@/components/Arrow";
 
 const navLinks = [
-  { id: "who-we-are", label: "Who We Are" },
-  { id: "about", label: "About" },
-  { id: "robots", label: "Robots" },
-  { id: "team", label: "Team" },
+  { id: "who-we-are", label: "The story" },
+  { id: "robots", label: "Our robots" },
+  { id: "team", label: "The team" },
   { id: "sponsors", label: "Partners" },
 ];
 
 const Navigation = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const { pathname } = useLocation();
+  const home = pathname === "/";
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    setMenuOpen(false);
+    if (!home) window.scrollTo(0, 0);
+  }, [pathname, home]);
 
   useEffect(() => {
-    const closeOnDesktop = () => {
-      if (window.innerWidth >= 768) setMobileMenuOpen(false);
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+        toggleRef.current?.focus();
+      }
     };
-    window.addEventListener("resize", closeOnDesktop);
-    return () => window.removeEventListener("resize", closeOnDesktop);
-  }, []);
-
-  const closeMobileMenu = () => setMobileMenuOpen(false);
+    const media = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => { if (media.matches) setMenuOpen(false); };
+    document.addEventListener("keydown", closeOnEscape);
+    media.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+      media.removeEventListener("change", closeOnDesktop);
+    };
+  }, [menuOpen]);
 
   return (
-    <nav aria-label="Primary" className="fixed inset-x-0 top-0 z-50">
-      <div
-        className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-300 sm:px-6 ${
-          scrolled ? "py-3" : "py-5"
-        }`}
-      >
-        <a href="#main-content" className="flex items-center gap-2.5">
-          <img src={logoImage} alt="Saint John's Shogun Logo" className="h-9 w-9" loading="eager" decoding="async" />
-          <span className="font-display text-lg font-bold uppercase tracking-wide text-foreground">
-            Shogun <span className="text-primary">27598</span>
-          </span>
-        </a>
-
-        <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1.5 backdrop-blur-md md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              className="rounded-full px-3.5 py-1.5 text-sm font-medium text-foreground/75 transition-colors hover:bg-white/10 hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
-          <Link
-            to="/hackshogun"
-            className="ml-1 inline-flex items-center gap-1 rounded-full bg-primary px-3.5 py-1.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            HackShogun
-            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-          </Link>
+    <header className="site-header sticky top-0 z-40 border-b border-border">
+      <nav aria-label="Primary" className="page-width flex h-20 items-center justify-between gap-6">
+        <Link to="/" aria-label="Saint John's Shogun home" className="flex shrink-0 items-center gap-3">
+          <img src={logoImage} alt="" className="h-11 w-11 rounded-full" width="44" height="44" />
+          <span className="brand-lockup">SHOGUN<span className="block font-mono text-[10px] font-normal tracking-[0.22em] text-muted-foreground">SAINT JOHN'S · 27598</span></span>
+        </Link>
+        <div className="hidden items-center gap-8 lg:flex">
+          {navLinks.map((link) => <a key={link.id} href={home ? "#" + link.id : "/#" + link.id} className="nav-link">{link.label}</a>)}
         </div>
-
-        <button
-          type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md md:hidden"
-          aria-expanded={mobileMenuOpen}
-          aria-controls="mobile-nav-links"
-          onClick={() => setMobileMenuOpen((open) => !open)}
-        >
-          <span className="sr-only">Toggle navigation menu</span>
-          {mobileMenuOpen ? (
-            <X className="h-5 w-5 text-foreground" aria-hidden="true" />
-          ) : (
-            <Menu className="h-5 w-5 text-foreground" aria-hidden="true" />
-          )}
+        <Link to="/hackshogun" className="nav-event hidden items-center gap-5 lg:inline-flex" aria-current={pathname === "/hackshogun" ? "page" : undefined}>HackShogun <Arrow className="h-4 w-4" /></Link>
+        <button ref={toggleRef} type="button" className="menu-toggle inline-flex items-center gap-3 lg:hidden" aria-expanded={menuOpen} aria-controls={menuOpen ? "mobile-nav-links" : undefined} aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} onClick={() => setMenuOpen((open) => !open)}>
+          <span className="font-mono text-xs uppercase tracking-widest">{menuOpen ? "Close" : "Menu"}</span>
+          <span className={menuOpen ? "menu-lines is-open" : "menu-lines"} aria-hidden="true"><span /><span /></span>
         </button>
-      </div>
-
-      <div
-        id="mobile-nav-links"
-        className={`mx-4 overflow-hidden rounded-2xl border border-white/10 bg-background/95 backdrop-blur-md transition-all duration-300 md:hidden ${
-          mobileMenuOpen ? "max-h-96 opacity-100" : "pointer-events-none max-h-0 opacity-0"
-        }`}
-      >
-        <div className="flex flex-col gap-1 p-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              onClick={closeMobileMenu}
-              className="rounded-lg px-3 py-2.5 text-foreground/85 transition-colors hover:bg-white/5 hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
-          <Link
-            to="/hackshogun"
-            onClick={closeMobileMenu}
-            className="mt-2 inline-flex items-center justify-center gap-1 rounded-lg bg-primary px-3 py-2.5 font-semibold text-primary-foreground"
-          >
-            HackShogun
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+      </nav>
+      {menuOpen && <nav id="mobile-nav-links" aria-label="Mobile" className="mobile-menu border-t border-border lg:hidden">
+        <div className="page-width flex flex-col py-5">
+          {navLinks.map((link, index) => <a key={link.id} href={home ? "#" + link.id : "/#" + link.id} onClick={() => setMenuOpen(false)} className="flex items-center justify-between border-b border-border py-4 text-xl"><span><span className="mr-5 font-mono text-xs text-primary">0{index + 1}</span>{link.label}</span><Arrow /></a>)}
+          <Link to="/hackshogun" onClick={() => setMenuOpen(false)} className="mt-5 flex items-center justify-between bg-primary px-5 py-4 font-semibold">HackShogun <Arrow /></Link>
         </div>
-      </div>
-    </nav>
+      </nav>}
+    </header>
   );
 };
-
 export default Navigation;

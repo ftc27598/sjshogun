@@ -1,8 +1,6 @@
-import { Target, Eye, Heart, TrendingUp } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 const values = ["Compassion", "Zeal", "Trust", "Simplicity", "Humility"];
-
 const impactStats = [
   { value: "600+", label: "Students & FTC Members" },
   { value: "200K+", label: "Viewers Online" },
@@ -10,72 +8,20 @@ const impactStats = [
   { value: "200,950+", label: "Total Impacted" },
 ];
 
-const About = () => {
-  return (
-    <section id="about" className="scroll-mt-24 border-y border-border bg-card px-6 py-28">
-      <div className="mx-auto max-w-6xl">
-        <Reveal>
-          <h2 className="mb-16 text-center text-4xl font-bold text-foreground sm:text-5xl md:text-6xl">
-            Our <span className="text-primary red-glow">Story</span>
-          </h2>
-        </Reveal>
-
-        <div className="grid gap-5 md:grid-cols-2">
-          <Reveal delay={0} className="h-full">
-            <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-background/60 p-8 transition-colors hover:border-primary/30">
-              <Target className="h-7 w-7 text-primary" aria-hidden="true" />
-              <h3 className="text-xl font-semibold text-foreground">Mission</h3>
-              <p className="font-sans leading-relaxed text-muted-foreground">
-                To design and build innovative robots while creating a lasting impact through outreach&mdash;combining
-                engineering excellence with meaningful community engagement.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={80} className="h-full">
-            <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-background/60 p-8 transition-colors hover:border-primary/30">
-              <Eye className="h-7 w-7 text-primary" aria-hidden="true" />
-              <h3 className="text-xl font-semibold text-foreground">Vision</h3>
-              <p className="font-sans leading-relaxed text-muted-foreground">
-                To be recognized as a leading FTC team, setting new standards for collaborative problem-solving and
-                inspiring the next generation to pursue STEM.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0} className="h-full">
-            <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-background/60 p-8 transition-colors hover:border-primary/30">
-              <Heart className="h-7 w-7 text-primary" aria-hidden="true" />
-              <h3 className="text-xl font-semibold text-foreground">Values</h3>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 font-sans text-muted-foreground">
-                {values.map((value) => (
-                  <li key={value} className="flex items-center gap-2">
-                    <span className="h-1 w-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                    {value}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-
-          <Reveal delay={80} className="h-full">
-            <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-background/60 p-8 transition-colors hover:border-primary/30">
-              <TrendingUp className="h-7 w-7 text-primary" aria-hidden="true" />
-              <h3 className="text-xl font-semibold text-foreground">Impact</h3>
-              <div className="grid grid-cols-2 gap-3">
-                {impactStats.map((stat) => (
-                  <div key={stat.label} className="rounded-lg bg-primary/5 p-3 text-center">
-                    <div className="font-display text-xl font-bold text-primary">{stat.value}</div>
-                    <div className="font-sans text-xs text-muted-foreground">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
+const About = () => (
+  <section id="about" className="section-space bg-card">
+    <div className="page-width">
+      <Reveal><div className="section-heading"><p className="section-label"><span>02</span> What we do</p><h2 className="section-title">Robots and outreach</h2></div></Reveal>
+      <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_0.65fr] lg:gap-24">
+        <div>
+          {[{ title: "Our goal", text: "We design and build robots, and we get other people involved through outreach. Both matter to our team." }, { title: "Looking ahead", text: "We want to keep getting better at FTC, solve problems together, and get more students interested in STEM." }].map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}><article className="grid gap-4 border-t border-border py-7 sm:grid-cols-[100px_1fr] sm:gap-8"><h3 className="text-lg font-medium">{item.title}</h3><p className="text-sm leading-7 text-muted-foreground">{item.text}</p></article></Reveal>
+          ))}
         </div>
+        <Reveal delay={100}><div className="border-t border-primary pt-7"><h3 className="mb-5 text-lg font-medium">What matters to us</h3><ul>{values.map((value, i) => <li key={value} className="flex items-center gap-5 border-b border-border py-3"><span className="font-mono text-[10px] text-primary">0{i + 1}</span><span className="text-muted-foreground">{value}</span></li>)}</ul></div></Reveal>
       </div>
-    </section>
-  );
-};
-
+      <Reveal><div className="mt-14 border-t border-border pt-8"><p className="eyebrow mb-8 text-muted-foreground">Outreach by the numbers</p><dl className="impact-grid grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4">{impactStats.map((stat) => <div key={stat.label}><dt className="text-xs text-muted-foreground">{stat.label}</dt><dd className="impact-number mt-3">{stat.value}</dd></div>)}</dl></div></Reveal>
+    </div>
+  </section>
+);
 export default About;
