@@ -91,6 +91,29 @@
   .hack-section-link { @apply border-b border-transparent pb-1 text-muted-foreground transition-colors duration-200 hover:border-primary hover:text-foreground; }
   .hack-light-button { @apply inline-flex min-h-12 w-fit items-center justify-center gap-5 bg-foreground px-5 py-3 text-xs font-bold uppercase tracking-wider text-background transition-[background-color,transform] duration-200 hover:bg-white active:scale-[0.98]; }
   .skip-link { @apply sr-only z-50 bg-primary px-4 py-2 text-white focus:fixed focus:left-4 focus:top-4 focus:not-sr-only; }
+  .sponsor-hero { background: radial-gradient(ellipse at 5% 70%, #261114 0%, #0d0d0d 60%); }
+  .sponsor-title { @apply font-display font-bold uppercase; font-size: clamp(5rem, 10.6vw, 10.5rem); line-height: .8; letter-spacing: -.035em; }
+  .sponsor-hero-photo img { aspect-ratio: 4 / 4.3; object-position: 50% 55%; }
+  .sponsor-photo-index { @apply absolute right-0 top-0 bg-primary px-4 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-white; }
+  .sponsor-purpose { background: #e8e4dc; color: #1b1917; }
+  .sponsor-purpose .section-label { color: #5b554e; }
+  .sponsor-purpose .section-label span { color: #a9232e; }
+  .sponsor-choice { @apply relative grid cursor-pointer grid-cols-[1.5rem_1fr_2rem] items-center gap-4 border-b border-border py-7 transition-colors duration-200; }
+  .sponsor-choice:hover, .sponsor-choice.is-selected { background: hsl(var(--primary) / .06); }
+  .sponsor-choice:has(input:focus-visible) { outline: 2px solid hsl(var(--primary)); outline-offset: -2px; }
+  .sponsor-choice-mark { @apply flex h-8 w-8 items-center justify-center border border-border text-muted-foreground transition-colors duration-200; }
+  .sponsor-choice.is-selected .sponsor-choice-mark { @apply border-primary bg-primary text-white; }
+  .sponsor-option-panel { border-top: 3px solid hsl(var(--primary)); }
+  .sponsor-team-photo img { min-height: 340px; max-height: 580px; object-position: center; }
+  .sponsor-faq summary::-webkit-details-marker { display: none; }
+  .sponsor-faq-mark { @apply relative h-4 w-4 shrink-0; }
+  .sponsor-faq-mark::before, .sponsor-faq-mark::after { content: ""; position: absolute; background: hsl(var(--primary)); }
+  .sponsor-faq-mark::before { top: 7px; left: 0; width: 16px; height: 2px; }
+  .sponsor-faq-mark::after { left: 7px; top: 0; height: 16px; width: 2px; }
+  .sponsor-faq[open] .sponsor-faq-mark::after { display: none; }
+  .sponsor-contact-title { @apply font-display font-bold uppercase; font-size: clamp(4.5rem, 14vw, 13rem); line-height: .85; letter-spacing: -.04em; }
+  .sponsor-email-button { @apply inline-flex min-h-12 w-fit items-center justify-center gap-6 bg-[#e8e4dc] px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#1b1917] transition-colors duration-200 hover:bg-white; }
+  .sponsor-contact a:focus-visible { outline-color: white; }
 }
 
 @layer utilities {
