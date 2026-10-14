@@ -48,7 +48,7 @@ Have another participant write portions of their project
 Present a collaborative project as individual work
 Participants may discuss ideas, attend workshops and help one another understand general technical concepts.
 However, the submitted project itself must represent the participant's own work.
-Each participant receives their own:
+Each participant must have their own:
 Submission
 GitHub repository
 Project writeup
@@ -77,7 +77,7 @@ Official welcome
 Competition rules
 Originality requirements
 Submission instructions
-GitHub Classroom instructions
+Public GitHub repository instructions
 Judging criteria
 Video requirements
 Schedule overview
@@ -204,10 +204,11 @@ Which portions did AI help generate?
 What technical problem did you personally solve?
 A participant who cannot reasonably explain substantial portions of their own project may receive reduced technical scores or be referred for a code-integrity review.
 
-8. GitHub Classroom Requirements
-Every participant must use the official HackShogun GitHub Classroom.
-Participants will receive instructions for accepting their individual repository.
+8. Public GitHub Repository Requirements
+Every participant must create their own public GitHub repository for their project.
 Each participant must develop their project inside that repository.
+Share the repository URL in the official submission form so judges can review the final code.
+Test the repository link while signed out to confirm it can be viewed without requesting access.
 8.1 Commit History
 Your Git history should demonstrate active development during the event.
 Participants should:
@@ -329,7 +330,7 @@ A personal Google account may be preferable when a school account prevents publi
 
 16. Source Code Submission
 Every participant must submit the URL of their project repository.
-The repository must be accessible to HackShogun judges.
+The repository must be public and accessible to HackShogun judges without requesting access.
 The repository should contain the latest version of the submitted project.
 Participants should push their final code before submitting the Google Form.
 
@@ -422,7 +423,7 @@ All registered participants must attend.
 The ceremony will cover:
 Theme
 Rules
-GitHub Classroom
+Public GitHub repository setup
 Submission system
 Judging
 FIRST Robotics
@@ -682,7 +683,8 @@ My email address is correct
 My project name is correct
 GitHub
 My latest code is pushed
-My repository is accessible
+My repository is public and accessible while signed out
+I included my repository URL in the submission form
 My repository contains my source code
 My commit history reflects my development
 My README explains the project

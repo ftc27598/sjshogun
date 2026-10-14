@@ -19,7 +19,7 @@ const schedule = [
     date: "January 15",
     time: "5:00 PM EST",
     title: "Opening ceremony",
-    description: "Required for every participant. Join the Discord Stage for the theme, rules, GitHub Classroom setup, submission instructions, and a Q&A. Building starts at about 5:30 PM.",
+    description: "Required for every participant. Join the Discord Stage for the theme, rules, public GitHub repository setup, submission instructions, and a Q&A. Building starts at about 5:30 PM.",
   },
   {
     day: "Saturday",
@@ -50,8 +50,8 @@ const rules = [
   },
   {
     number: "03",
-    title: "Use GitHub Classroom",
-    text: "You'll receive your own repository through the official GitHub Classroom. Work there, commit during the weekend, and make sure judges can access the final code.",
+    title: "Create a public GitHub repository",
+    text: "Create your own public GitHub repository for your project. Commit during the weekend, push your final code, and share the repository link in your submission so judges can review it.",
   },
   {
     number: "04",
@@ -80,7 +80,7 @@ const HackShogun = () => {
       <Navigation />
       <main id="main-content">
         <section className="hack-hero overflow-hidden border-b border-border">
-          <div className="page-width grid gap-12 pb-16 pt-12 lg:grid-cols-[1fr_0.72fr] lg:items-center lg:gap-16 lg:pb-20 lg:pt-20">
+          <div className="page-width pb-16 pt-12 lg:pb-20 lg:pt-20">
             <div>
               <p className="section-label"><span>2027</span> A weekend hackathon by FTC Team 27598</p>
               <h1 className="hack-title mt-8">HACK<br /><span className="text-primary">SHOGUN</span></h1>
@@ -93,11 +93,6 @@ const HackShogun = () => {
                 <a href={submissionUrl} target="_blank" rel="noopener noreferrer" className="hack-outline-button">Submission form <Arrow /></a>
               </div>
               <p className="mt-4 max-w-lg text-xs leading-6 text-muted-foreground">Discord is where organizers will post announcements, workshop times, and any schedule changes. Official registration is required to compete.</p>
-            </div>
-            <div className="hack-poster relative hidden aspect-[4/5] min-h-[440px] flex-col justify-between overflow-hidden border border-border p-8 lg:flex" aria-hidden="true">
-              <div className="relative z-10 flex justify-between font-mono text-[10px] uppercase tracking-[0.2em]"><span>Online / Discord</span><span>01.15 - 01.17</span></div>
-              <div className="relative z-10"><span className="hack-poster-number">27</span><p className="font-display text-5xl font-semibold uppercase leading-none">TECH FOR<br />TOMORROW</p></div>
-              <div className="relative z-10 flex justify-between border-t border-foreground/30 pt-4 font-mono text-[10px] uppercase tracking-[0.2em]"><span>Make something useful</span><span>27598</span></div>
             </div>
           </div>
           <div className="border-t border-border">
@@ -154,7 +149,7 @@ const HackShogun = () => {
               <div className="border-t border-border">
                 <div className="border-b border-border py-6"><h3 className="text-xl font-semibold">1. Your details</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Your registered name, email address, and project name.</p></div>
                 <div className="border-b border-border py-6"><h3 className="text-xl font-semibold">2. A 3-5 minute video</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Show the working project, the problem, and its main features. Upload the video to a Google Drive folder set to "Anyone with the link can view." Test the link while signed out before you submit.</p></div>
-                <div className="border-b border-border py-6"><h3 className="text-xl font-semibold">3. Your code</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Include a link to your latest GitHub Classroom repository. Push your final code first, make the repository accessible to judges, and include a README. Keep private keys and passwords out of the repo.</p></div>
+                <div className="border-b border-border py-6"><h3 className="text-xl font-semibold">3. Your code</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Include a link to the public GitHub repository you created for your project. Push your final code first and include a README. Test the repository link while signed out so judges can access it. Keep private keys and passwords out of the repo.</p></div>
                 <div className="border-b border-border py-6"><h3 className="text-xl font-semibold">4. Four short writeups</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Explain the problem, what you built, how it works, and what you'd improve. Disclose significant AI use and major outside resources.</p><ul className="mt-5 grid gap-3 sm:grid-cols-2">{writtenFields.map((field) => <li key={field.title} className="flex justify-between gap-3 border-l-2 border-primary pl-3 text-sm"><span>{field.title}</span><span className="shrink-0 text-xs text-muted-foreground">Max {field.limit}</span></li>)}</ul></div>
               </div>
             </div>

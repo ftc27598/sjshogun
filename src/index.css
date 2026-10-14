@@ -88,9 +88,6 @@
   .hack-outline-button { @apply inline-flex min-h-12 items-center justify-center gap-5 border border-foreground/50 px-5 py-3 text-xs font-bold uppercase tracking-wider text-foreground transition-[background-color,transform] duration-200 hover:bg-white/10 active:scale-[0.98]; }
   .hack-outline-button svg, .hack-light-button svg { @apply transition-transform duration-200; }
   .hack-outline-button:hover svg, .hack-light-button:hover svg { transform: translate(2px,-2px); }
-  .hack-poster { background: linear-gradient(160deg, #991e2a, #5c121b 65%, #250d11); }
-  .hack-poster::before { content: ""; position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 52px 52px; }
-  .hack-poster-number { @apply mb-6 block font-display text-[clamp(12rem,27vw,28rem)] font-bold leading-[0.7] tracking-[-0.09em]; }
   .hack-section-link { @apply border-b border-transparent pb-1 text-muted-foreground transition-colors duration-200 hover:border-primary hover:text-foreground; }
   .hack-light-button { @apply inline-flex min-h-12 w-fit items-center justify-center gap-5 bg-foreground px-5 py-3 text-xs font-bold uppercase tracking-wider text-background transition-[background-color,transform] duration-200 hover:bg-white active:scale-[0.98]; }
   .skip-link { @apply sr-only z-50 bg-primary px-4 py-2 text-white focus:fixed focus:left-4 focus:top-4 focus:not-sr-only; }
