@@ -1,166 +1,142 @@
 import { useEffect } from "react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 import Arrow from "@/components/Arrow";
+import HackNavigation from "@/components/hackshogun/HackNavigation";
+import HackCountdown from "@/components/hackshogun/HackCountdown";
+import { HackSponsorCarousel, HackSponsorSection } from "@/components/hackshogun/HackSponsors";
+import { discordUrl, registrationUrl } from "@/lib/hackshogun";
+import "./HackShogun.css";
 
-const discordUrl = "https://discord.gg/pMh7hK8eAm";
-const submissionUrl = "https://forms.gle/KmPCB5GrciDG8S7v8";
-
-const quickFacts = [
-  { label: "When", value: "Jan 15-17, 2027" },
-  { label: "Where", value: "Online on Discord" },
-  { label: "Who", value: "Ages 13-18" },
-  { label: "Cost", value: "Free" },
+const steps = [
+  { title: "Make it official", text: "Every participant registers individually, even if your team is already formed.", link: "Register now", href: registrationUrl },
+  { title: "Join the Discord", text: "Find teammates, follow announcements, and get the event and submission details.", link: "Join the community", href: discordUrl },
+  { title: "Find your people", text: "Build a team of 1–4. Choose a captain and confirm your roster through Discord.", link: "Read the team rules", href: "#rules" },
+  { title: "Show up. Build something.", text: "Attend the opening ceremony, then turn your idea into a working project over the weekend.", link: "See the schedule", href: "#schedule" },
 ];
 
 const schedule = [
-  {
-    day: "Friday",
-    date: "January 15",
-    time: "5:00 PM EST",
-    title: "Opening ceremony",
-    description: "Required for every participant. Join the Discord Stage for the theme, rules, public GitHub repository setup, submission instructions, and a Q&A. Building starts at about 5:30 PM.",
-  },
-  {
-    day: "Saturday",
-    date: "January 16",
-    time: "All day",
-    title: "Build and learn",
-    description: "Work on your project. Optional workshops, mentor help, and other activities may run throughout the day. Exact times will be posted in Discord.",
-  },
-  {
-    day: "Sunday",
-    date: "January 17",
-    time: "5:00 PM EST",
-    title: "Submission deadline",
-    description: "Push your final code, upload your demo, check that your links work, and submit the Google Form before 5:00 PM EST.",
-  },
+  { day: "01", date: "Friday, Jan 15", label: "Kick things off", events: [
+    { time: "5:00 PM EST", title: "Opening ceremony", text: "Required for everyone. Rules, judging, GitHub, a FIRST Robotics introduction, and Q&A on Discord." },
+    { time: "Approx. 5:30 PM", title: "Let the building begin", text: "Development starts after the ceremony. Pick your problem and get to work." },
+  ] },
+  { day: "02", date: "Saturday, Jan 16", label: "Build, learn, repeat", events: [
+    { time: "All day", title: "Your main build day", text: "Make progress, test your ideas, and help your teammates." },
+    { time: "Times in Discord", title: "Optional sessions", text: "Mentoring, coding and AI workshops, GitHub help, and robotics programming may be available." },
+  ] },
+  { day: "03", date: "Sunday, Jan 17", label: "Bring it all together", events: [
+    { time: "Before the deadline", title: "Test. Record. Check.", text: "Finish your README, record your demo, prepare written answers, and test all links while signed out." },
+    { time: "5:00 PM EST", title: "Submissions close", text: "One submission per team. The submission form will be shared in Discord. Code freezes at the deadline." },
+  ] },
 ];
 
 const rules = [
-  {
-    number: "01",
-    title: "Build on your own",
-    text: "HackShogun is an individual competition. You can ask questions and attend workshops, but the project you submit must be your own work.",
-  },
-  {
-    number: "02",
-    title: "Start fresh",
-    text: "Build the main project during the event. Starter templates, libraries, and public resources are fine. Disclose meaningful code or work that existed beforehand.",
-  },
-  {
-    number: "03",
-    title: "Create a public GitHub repository",
-    text: "Create your own public GitHub repository for your project. Commit during the weekend, push your final code, and share the repository link in your submission so judges can review it.",
-  },
-  {
-    number: "04",
-    title: "AI is allowed",
-    text: "You can use AI tools, but disclose meaningful use and be ready to explain what you built and how it works.",
-  },
+  { title: "Teams of 1–4", text: "Each person joins one team. Solo builders form one-person teams and compete under the same judging criteria." },
+  { title: "Build during the event", text: "Create the main project during HackShogun. Libraries, templates, and APIs are welcome; disclose major resources and pre-existing code." },
+  { title: "One public GitHub repo", text: "Create a public repository for your team, commit regularly, and include your source code and a useful README. Keep credentials out." },
+  { title: "AI is allowed", text: "Disclose meaningful AI assistance, check generated work, and be ready to explain your code and each member's contribution." },
+  { title: "Show the real thing", text: "Prepare a 3–5 minute video of your working project, plus the four written responses in the hacker guide." },
+  { title: "Be good to each other", text: "Respect participants, protect private information, and ask mentors for guidance. Your team must create its own project." },
 ];
 
-const writtenFields = [
-  { title: "Problem and target user", limit: "400 words" },
-  { title: "Solution and user experience", limit: "600 words" },
-  { title: "Technical architecture", limit: "600 words" },
-  { title: "Innovation and future scope", limit: "400 words" },
+const judging = [
+  { title: "Innovation & creativity", text: "An original idea or a thoughtful new approach to a real problem." },
+  { title: "Technical execution", text: "How you built it, the decisions you made, and what you understand." },
+  { title: "Functionality & execution", text: "A working prototype that does what your team says it does." },
+  { title: "Presentation & communication", text: "A clear demo and an explanation that makes your project easy to follow." },
+  { title: "Impact & usefulness", text: "Who your project helps and how it could make a meaningful difference." },
+];
+
+const faqs = [
+  { question: "Who can join HackShogun?", answer: "Students ages 13–18 during the event. Each participant must register, join Discord, attend the opening ceremony, and complete any required parent or guardian permissions." },
+  { question: "Do I need coding experience?", answer: "No prior programming experience is necessary. HackShogun is beginner-friendly. Build something you can demonstrate and explain, and use the weekend to learn." },
+  { question: "Can I participate by myself?", answer: "Yes. Teams have 1–4 registered participants. A one-person team is fully eligible and is judged using the same criteria as larger teams. Each person can join only one team." },
+  { question: "Does every teammate need to register?", answer: "Yes. Register individually, then follow the team confirmation process announced in Discord. Choose one captain as the primary organizer contact. Team deadlines and roster changes are handled through Discord." },
+  { question: "What can we build?", answer: "A website, app, AI tool, game with a real-world purpose, robot, hardware prototype, or another working technology project. Choose a meaningful problem that fits #Tech4Tomorrow." },
+  { question: "Can we use AI and existing libraries?", answer: "Yes. AI tools, libraries, templates, APIs, and datasets are allowed. Disclose meaningful use and pre-existing code, verify generated work, and understand the important parts of your project. Most project-specific development must happen during the event." },
+  { question: "Where do we submit our project?", answer: "The project submission form and instructions will be shared in the official Discord. One representative submits for the team by Sunday, January 17 at 5:00 PM EST. The registration form is only for signing up to participate." },
+  { question: "What goes into the final submission?", answer: "Your team and project details, a public GitHub repository, an accessible 3–5 minute demo video, four written responses, and disclosures of AI use and outside resources. Test all links while signed out. The hacker guide includes the full checklist and word limits." },
+  { question: "Is the opening ceremony required?", answer: "Yes. Every participant must attend on Friday, January 15 at 5:00 PM EST in Discord. Building begins afterward, at approximately 5:30 PM. All published event times are Eastern Standard Time." },
 ];
 
 const HackShogun = () => {
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = "HackShogun 2027 | Saint John's Shogun";
-    return () => { document.title = previousTitle; };
+    const description = document.querySelector('meta[name="description"]');
+    const previousDescription = description?.getAttribute("content");
+    document.title = "HackShogun 2027 | Build a better tomorrow";
+    description?.setAttribute("content", "Join HackShogun January 15–17, 2027. A beginner-friendly online hackathon for ages 13–18, in teams of 1–4. Register and build for #Tech4Tomorrow.");
+    if (!window.location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    return () => {
+      document.title = previousTitle;
+      if (previousDescription !== null && previousDescription !== undefined) description?.setAttribute("content", previousDescription);
+    };
   }, []);
 
   return (
-    <div className="min-h-[100dvh] bg-background">
+    <div className="hack-event" id="top">
       <a href="#main-content" className="skip-link">Skip to main content</a>
-      <Navigation />
+      <HackNavigation />
+      <HackSponsorCarousel />
       <main id="main-content">
-        <section className="hack-hero overflow-hidden border-b border-border">
-          <div className="page-width pb-16 pt-12 lg:pb-20 lg:pt-20">
-            <div>
-              <p className="section-label"><span>2027</span> A weekend hackathon by FTC Team 27598</p>
-              <h1 className="hack-title mt-8">HACK<br /><span className="text-primary">SHOGUN</span></h1>
-              <p className="hack-theme mt-8">#Tech4Tomorrow</p>
-              <p className="mt-5 font-mono text-[11px] font-medium uppercase tracking-[0.02em]">January 15-17, 2027 / Starts 5:00 PM EST</p>
-              <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">Pick a real problem, build a tech project over the weekend, and show what you made. It's free, online, and open to students ages 13-18. Beginners are welcome.</p>
-              <p className="mt-4 text-sm text-foreground/80">Solo projects only. The opening ceremony is required.</p>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="action-button">Join the Discord <Arrow /></a>
-                <a href={submissionUrl} target="_blank" rel="noopener noreferrer" className="hack-outline-button">Submission form <Arrow /></a>
-              </div>
-              <p className="mt-4 max-w-lg text-xs leading-6 text-muted-foreground">Discord is where organizers will post announcements, workshop times, and any schedule changes. Official registration is required to compete.</p>
+        <section className="hs-hero hs-width" aria-labelledby="hack-title">
+          <div className="hs-hero-copy">
+            <p className="hs-event-date"><span aria-hidden="true" />January 15–17, 2027 <span className="hs-date-divider" aria-hidden="true">—</span> Online</p>
+            <h1 id="hack-title">Hack<span>Shogun</span></h1>
+            <p className="hs-hero-description">A weekend to turn a good idea into something real. Join students ages 13–18, build in a team of 1–4, and create tech for a better tomorrow.</p>
+            <div className="hs-actions">
+              <a href={registrationUrl} target="_blank" rel="noopener noreferrer" className="hs-button hs-button-primary">Register for HackShogun <Arrow /></a>
+              <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="hs-button">Join Discord <Arrow /></a>
             </div>
+            <p className="hs-hero-note">Organized by <Link to="/">Saint John's Shogun · FTC 27598</Link><br />First-time builders are welcome.</p>
           </div>
-          <div className="border-t border-border">
-            <dl className="page-width grid grid-cols-2 lg:grid-cols-4">
-              {quickFacts.map((fact) => <div key={fact.label} className="border-r border-border py-5 pr-4 last:border-r-0 lg:pl-6 lg:first:pl-0"><dt className="eyebrow text-primary">{fact.label}</dt><dd className="mt-2 text-sm font-semibold sm:text-base">{fact.value}</dd></div>)}
-            </dl>
+          <div className="hs-hero-art" aria-hidden="true"><div className="hs-globe-halo" /><img src="/hackshogun-orbit.svg" alt="" width="660" height="660" /><span className="hs-art-caption">Good ideas can come from anywhere.</span></div>
+        </section>
+
+        <div className="hs-width"><HackCountdown /></div>
+
+        <section id="about" className="hs-section hs-width">
+          <p className="hs-eyebrow">One weekend. A world of possibilities.</p>
+          <h2 className="hs-heading">A little curiosity.<br /><span>A better tomorrow.</span></h2>
+          <div className="hs-about-grid">
+            <article className="hs-theme-card"><span className="hs-tag">The 2027 challenge</span><h3>#Tech4Tomorrow</h3><p>Find a problem that matters to someone. Then build a working technology project that helps.</p><p>Think health, education, accessibility, sustainability, robotics, science, safety—or another issue you care about.</p><div className="hs-format-tags" aria-label="Project ideas">{["An app", "A website", "An AI tool", "A purposeful game", "A hardware prototype"].map((format) => <span key={format}>{format}</span>)}</div></article>
+            <div className="hs-about-details"><p>This is HackShogun: a virtual, beginner-friendly technology competition from SJ Shogun. Bring your idea, your questions, and a willingness to figure things out.</p><p>Build with friends or start a one-person team. The goal is a working project your team can demonstrate, understand, and be proud of.</p><dl className="hs-facts"><div><dt>years old</dt><dd>13–18</dd></div><div><dt>people per team</dt><dd>1–4</dd></div><div><dt>online, on Discord</dt><dd>100%</dd></div></dl></div>
           </div>
         </section>
 
-        <nav aria-label="HackShogun sections" className="border-b border-border bg-card">
-          <div className="page-width flex flex-wrap gap-x-8 gap-y-3 py-4 text-xs font-semibold uppercase tracking-wider">
-            <a href="#challenge" className="hack-section-link">The challenge</a>
-            <a href="#schedule" className="hack-section-link">Schedule</a>
-            <a href="#rules" className="hack-section-link">Rules</a>
-            <a href="#submit" className="hack-section-link">How to submit</a>
-          </div>
-        </nav>
-
-        <section id="challenge" className="section-space">
-          <div className="page-width grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <p className="section-label"><span>01</span> The challenge</p>
-            <div>
-              <h2 className="section-title">Tech for tomorrow</h2>
-              <p className="mt-7 max-w-3xl text-base leading-8 text-muted-foreground">Find a problem that matters to someone, then make a tech project that helps. It can be a website, app, game with a real-world purpose, AI tool, robot, hardware prototype, or something else you can demonstrate.</p>
-              <div className="mt-10 grid gap-0 border-t border-border sm:grid-cols-3">
-                <div className="border-b border-border py-6 sm:pr-6"><span className="eyebrow text-primary">Find</span><p className="mt-3 text-sm leading-7">Who has the problem, and why does it matter?</p></div>
-                <div className="border-b border-border py-6 sm:border-l sm:px-6"><span className="eyebrow text-primary">Build</span><p className="mt-3 text-sm leading-7">Make a working project during HackShogun.</p></div>
-                <div className="border-b border-border py-6 sm:border-l sm:pl-6"><span className="eyebrow text-primary">Show</span><p className="mt-3 text-sm leading-7">Explain what it does and what you personally made.</p></div>
-              </div>
-            </div>
-          </div>
+        <section id="get-started" className="hs-section hs-width">
+          <div className="hs-section-heading"><div><p className="hs-eyebrow">Your next project starts here</p><h2 className="hs-heading">Join in <span>four steps.</span></h2></div><p>Register as a person.<br />Build as a team.</p></div>
+          <ol className="hs-step-grid">{steps.map((step, index) => <li className="hs-card hs-step-card" key={step.title}><span className="hs-step-number">0{index + 1}</span><h3>{step.title}</h3><p>{step.text}</p><a href={step.href} {...(step.href.startsWith("https://") ? { target: "_blank", rel: "noopener noreferrer" } : {})} className="hs-inline-link">{step.link}<Arrow /></a></li>)}</ol>
         </section>
 
-        <section id="schedule" className="section-space bg-card">
-          <div className="page-width">
-            <div className="max-w-3xl"><p className="section-label"><span>02</span> January 15-17</p><h2 className="section-title mt-6">The weekend schedule</h2><p className="mt-5 text-sm leading-7 text-muted-foreground">All times are Eastern Standard Time. Watch Discord for workshop details and official updates.</p></div>
-            <div className="mt-12 border-t border-border">
-              {schedule.map((item) => <div key={item.day} className="grid gap-4 border-b border-border py-7 md:grid-cols-[0.35fr_0.22fr_1fr] md:gap-8"><div><h3 className="font-display text-3xl font-semibold uppercase">{item.day}</h3><p className="mt-1 text-sm text-muted-foreground">{item.date}</p></div><p className="font-mono text-xs text-primary">{item.time}</p><div><h4 className="text-xl font-semibold">{item.title}</h4><p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">{item.description}</p></div></div>)}
-            </div>
-            <p className="mt-6 border-l-2 border-primary pl-4 text-sm leading-7 text-muted-foreground">The Sunday 5:00 PM EST deadline is firm. Leave time to upload and test your video before filling out the form.</p>
-          </div>
+        <section id="schedule" className="hs-section hs-width">
+          <div className="hs-section-heading"><div><p className="hs-eyebrow">Make a weekend of it</p><h2 className="hs-heading">The event <span>schedule.</span></h2></div><span className="hs-tag">All times are EST</span></div>
+          <div className="hs-schedule-grid">{schedule.map((day) => <article className="hs-card hs-day" key={day.day}><div className="hs-day-header"><span>Day {day.day}</span><span>{day.date}</span></div><h3>{day.label}</h3><ol>{day.events.map((event) => <li key={event.title}><p className="hs-time">{event.time}</p><h4>{event.title}</h4><p>{event.text}</p></li>)}</ol></article>)}</div>
+          <p className="hs-section-note">Watch Discord for confirmed workshop times and any updates. Leave time to upload and check your project before the Sunday deadline.</p>
         </section>
 
-        <section id="rules" className="section-space">
-          <div className="page-width">
-            <div className="grid gap-8 lg:grid-cols-[0.42fr_1fr] lg:gap-20"><div><p className="section-label"><span>03</span> The basics</p><h2 className="section-title mt-6">Know the rules</h2></div><div className="border-t border-border">{rules.map((rule) => <article key={rule.number} className="grid gap-4 border-b border-border py-6 sm:grid-cols-[2rem_0.6fr_1fr] sm:gap-6"><span className="font-mono text-xs text-primary">{rule.number}</span><h3 className="text-lg font-semibold">{rule.title}</h3><p className="text-sm leading-7 text-muted-foreground">{rule.text}</p></article>)}</div></div>
-            <div className="mt-10 flex flex-wrap items-center justify-between gap-5 border-t border-primary pt-6"><p className="max-w-2xl text-sm leading-7 text-muted-foreground">Participants must be 13-18, register officially, join Discord, attend the opening ceremony, and follow the code of conduct. The full guide has the complete eligibility, judging, and conduct rules.</p><a href="/hackshogun-2027-guide.txt" target="_blank" rel="noopener noreferrer" className="text-link">Read the full 2027 guide <Arrow /></a></div>
-          </div>
+        <section id="rules" className="hs-section hs-width">
+          <div className="hs-section-heading"><div><p className="hs-eyebrow">A fair shot for every builder</p><h2 className="hs-heading">The rules.<br /><span>The essentials.</span></h2></div><a href="/hackshogun-2027-guide.txt" target="_blank" rel="noopener noreferrer" className="hs-inline-link">Read the official hacker guide<Arrow /></a></div>
+          <div className="hs-rules-grid">{rules.map((rule, index) => <article className="hs-rule" key={rule.title}><span className="hs-rule-index" aria-hidden="true">0{index + 1}</span><h3>{rule.title}</h3><p>{rule.text}</p></article>)}</div>
+          <div className="hs-discord-note"><div><span className="hs-tag">Keep this in mind</span><h3>Register here. Submit through Discord.</h3><p>The project submission form will be shared in Discord. One teammate submits your final project, demo, and written answers by January 17 at 5:00 PM EST.</p></div><a href={discordUrl} target="_blank" rel="noopener noreferrer" className="hs-button">Join Discord<Arrow /></a></div>
         </section>
 
-        <section id="submit" className="section-space bg-card">
-          <div className="page-width">
-            <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20"><div><p className="section-label"><span>04</span> Before 5 PM Sunday</p><h2 className="section-title mt-6">Submit your project</h2><p className="mt-5 text-sm leading-7 text-muted-foreground">Use the official Google Form. You can prepare your written answers in a separate document and paste them in when they're ready.</p><a href={submissionUrl} target="_blank" rel="noopener noreferrer" className="action-button mt-8">Open submission form <Arrow /></a></div>
-              <div className="border-t border-border">
-                <div className="border-b border-border py-6"><h3 className="text-xl font-semibold">1. Your details</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Your registered name, email address, and project name.</p></div>
-                <div className="border-b border-border py-6"><h3 className="text-xl font-semibold">2. A 3-5 minute video</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Show the working project, the problem, and its main features. Upload the video to a Google Drive folder set to "Anyone with the link can view." Test the link while signed out before you submit.</p></div>
-                <div className="border-b border-border py-6"><h3 className="text-xl font-semibold">3. Your code</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Include a link to the public GitHub repository you created for your project. Push your final code first and include a README. Test the repository link while signed out so judges can access it. Keep private keys and passwords out of the repo.</p></div>
-                <div className="border-b border-border py-6"><h3 className="text-xl font-semibold">4. Four short writeups</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">Explain the problem, what you built, how it works, and what you'd improve. Disclose significant AI use and major outside resources.</p><ul className="mt-5 grid gap-3 sm:grid-cols-2">{writtenFields.map((field) => <li key={field.title} className="flex justify-between gap-3 border-l-2 border-primary pl-3 text-sm"><span>{field.title}</span><span className="shrink-0 text-xs text-muted-foreground">Max {field.limit}</span></li>)}</ul></div>
-              </div>
-            </div>
-          </div>
+        <section id="judging" className="hs-section hs-width">
+          <div className="hs-section-heading"><div><p className="hs-eyebrow">Make it useful. Make it work.</p><h2 className="hs-heading">How projects<br /><span>are judged.</span></h2></div><p>A clear, working prototype can go further than a big idea that isn't finished. The same criteria apply to every team size.</p></div>
+          <ol className="hs-judging-list">{judging.map((criterion, index) => <li key={criterion.title}><span className="hs-judging-number">0{index + 1}</span><h3>{criterion.title}</h3><p>{criterion.text}</p><span className="hs-judging-dot" aria-hidden="true" /></li>)}</ol>
+          <p className="hs-section-note">Top submissions may advance to a live finalist round. Be ready to explain your decisions, code, AI use, and each teammate's contribution. Details will be announced in Discord.</p>
         </section>
 
-        <section className="hack-final border-t border-primary bg-primary py-12 text-white">
-          <div className="page-width grid gap-8 md:grid-cols-[1fr_auto] md:items-center"><div><p className="font-mono text-xs uppercase tracking-[0.2em]">HackShogun 2027</p><h2 className="mt-3 font-display text-5xl font-semibold uppercase leading-none sm:text-6xl">See you on Discord</h2><p className="mt-4 text-sm text-white/80">Friday, January 15 at 5:00 PM EST. The opening ceremony is required.</p></div><a href={discordUrl} target="_blank" rel="noopener noreferrer" className="hack-light-button">Join the Discord <Arrow /></a></div>
+        <HackSponsorSection />
+
+        <section id="faq" className="hs-section hs-width">
+          <div className="hs-faq-layout"><div><p className="hs-eyebrow">Before you jump in</p><h2 className="hs-heading">Good<br /><span>questions.</span></h2><p className="hs-faq-intro">Still wondering about something?<br /><a href={discordUrl} target="_blank" rel="noopener noreferrer" className="hs-inline-link">Ask us on Discord<Arrow /></a></p></div><div className="hs-faq-list">{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}<span className="hs-faq-plus" aria-hidden="true" /></summary><p>{faq.answer}</p></details>)}</div></div>
+        </section>
+
+        <section className="hs-closing hs-width">
+          <p className="hs-eyebrow">January 15–17, 2027 · Online</p><h2>Your idea.<br /><span>A better tomorrow.</span></h2><p>Find your team. Follow your curiosity. Build something that matters.</p><div className="hs-actions"><a href={registrationUrl} target="_blank" rel="noopener noreferrer" className="hs-button hs-button-primary">I'm in. Let's build.<Arrow /></a><a href={discordUrl} target="_blank" rel="noopener noreferrer" className="hs-button">Join Discord<Arrow /></a></div>
         </section>
       </main>
-      <Footer />
+      <footer className="hs-footer hs-width"><Link to="/" className="hs-footer-brand">SJ SHOGUN <span>FTC 27598</span></Link><p>A student-built event. A better tomorrow.</p><div><a href="mailto:dojorojorobotics@gmail.com">Contact us<Arrow /></a><Link to="/">Back to the team<Arrow /></Link></div><p className="hs-footer-bottom">© {new Date().getFullYear()} Saint John's Shogun · Shrewsbury, Massachusetts</p></footer>
     </div>
   );
 };
