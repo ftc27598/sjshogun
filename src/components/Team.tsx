@@ -11,21 +11,10 @@ const sections: TeamSection[] = [
 ];
 
 const Team = () => (
-  <section id="team" className="section-space bg-card">
-    <div className="page-width">
-      <Reveal><div className="section-heading"><p className="section-label"><span>04</span> The team</p><h2 className="section-title">Meet the team</h2><p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground">Here are the people working on build, code, and outreach.</p></div></Reveal>
-      <Reveal><div className="team-banner mt-12"><img src={teamPhoto} alt="Saint John's Shogun team together at competition" loading="lazy" decoding="async" /><span className="team-banner-caption">SHOGUN AT COMPETITION / TEAM 27598</span></div></Reveal>
-      <div className="mt-12 border-t border-border">
-        {sections.map((section, index) => (
-          <Reveal key={section.title} delay={index * 50}>
-            <div className="roster-row grid gap-5 border-b border-border py-7 md:grid-cols-[0.38fr_1fr] md:gap-12">
-              <h3 className="flex items-baseline gap-4 text-xl font-medium"><span className="font-mono text-[10px] text-primary">0{index + 1}</span>{section.title}</h3>
-              <ul className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-4">{section.members.map((member) => <li key={section.title + member.name} className="min-w-0"><span className="block text-base font-medium">{member.name}</span><span className="mt-1 block text-xs text-muted-foreground">{member.role}</span></li>)}</ul>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </div>
+  <section id="team" className="sj-section sj-width" aria-labelledby="team-title">
+    <Reveal><div className="sj-section-heading"><div><p className="sj-eyebrow">02 / The people</p><h2 id="team-title">Many minds.<br /><span>One team.</span></h2></div><p>Here are the people working on build, code, and outreach.</p></div></Reveal>
+    <Reveal><figure className="sj-team-photo"><img src={teamPhoto} alt="Saint John's Shogun team together at competition" loading="lazy" decoding="async" width="866" height="445" /><figcaption>Shogun at competition <span>Team 27598</span></figcaption></figure></Reveal>
+    <div className="sj-roster">{sections.map((section, index) => <Reveal key={section.title} delay={index * 40}><div className="sj-roster-row"><h3><span>0{index + 1}</span>{section.title}</h3><ul>{section.members.map(member => <li key={section.title + member.name}><strong>{member.name}</strong><span>{member.role}</span></li>)}</ul></div></Reveal>)}</div>
   </section>
 );
 export default Team;

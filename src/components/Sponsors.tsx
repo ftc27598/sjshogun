@@ -4,21 +4,10 @@ import Reveal from "@/components/Reveal";
 import Arrow from "@/components/Arrow";
 
 const Sponsors = () => (
-  <section id="sponsors" className="section-space">
-    <div className="page-width">
-      <Reveal><div className="section-heading"><p className="section-label"><span>05</span> Our partners</p><h2 className="section-title">Thanks to our partners</h2><p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground">These partners support our team and its work in STEM education.</p></div></Reveal>
-      <div className="partner-grid mt-14 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-4">
-        {partners.map((partner, index) => <Reveal key={partner.name} delay={index * 50}><div className="partner-cell flex min-h-36 flex-col items-start justify-between gap-6 border-b border-r border-border p-6">
-          <span className="font-mono text-[10px] tracking-[0.2em] text-primary">0{index + 1} / PARTNER</span>
-          {partner.logo && <img src={partner.logo} alt="Northboro House of Pizza logo" className="h-12 max-w-40 object-contain" loading="lazy" decoding="async" />}
-          <span className="text-lg font-medium leading-tight">{partner.name}</span>
-        </div></Reveal>)}
-      </div>
-      <Reveal><div className="partner-cta mt-14 grid gap-7 border-t border-primary pt-8 md:grid-cols-[1fr_auto] md:items-end">
-        <div><p className="eyebrow text-primary">Become a partner</p><h3 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">Want to support the team?</h3><p className="mt-3 max-w-lg text-sm leading-7 text-muted-foreground">Email us if you'd like to work with Shogun.</p></div>
-        <Link to="/sponsorship" className="action-button w-fit">Explore sponsorship <Arrow /></Link>
-      </div></Reveal>
-    </div>
+  <section id="sponsors" className="sj-section sj-width sj-sponsors" aria-labelledby="sponsors-title">
+    <Reveal><div className="sj-section-heading"><div><p className="sj-eyebrow">03 / Our sponsors</p><h2 id="sponsors-title">Behind every build.<br /><span>Thank you.</span></h2></div><p>These partners support our team and its work in STEM education.</p></div></Reveal>
+    <div className="sj-partner-grid">{partners.map((partner, index) => <Reveal key={partner.name} delay={index * 40}><div className="sj-partner"><span className="sj-partner-index">0{index + 1} / Partner</span>{partner.logo ? <img src={partner.logo} alt={partner.name + " logo"} loading="lazy" decoding="async" /> : <span className="sj-partner-wordmark">{partner.name}</span>}{partner.logo && <p>{partner.name}</p>}</div></Reveal>)}</div>
+    <Reveal><div className="sj-partner-cta"><div><p className="sj-eyebrow">Become a partner</p><h3>Help build what's next.</h3><p>Support the team. Get your logo featured on our social media, merchandise, and robot.</p></div><Link to="/sponsorship" className="sj-button sj-button-primary">Explore sponsorship<Arrow /></Link></div></Reveal>
   </section>
 );
 export default Sponsors;
