@@ -1,0 +1,135 @@
+.sp-hero { grid-template-columns: 1.1fr .85fr; gap: 45px 100px; }
+.sp-hero h1 { font-size: clamp(3.7rem, 6.4vw, 6.5rem); }
+.sp-hero-note { margin-top: 27px; color: #939793; font-size: 11px; line-height: 1.9; }
+.sp-hero-photo { min-width: 0; max-width: 440px; width: 100%; justify-self: end; animation: sj-photo-in .8s ease-out both; }
+.sp-robot-frame { position: relative; padding: 8px; border: 1px solid #353638; border-radius: 24px; background: #191b1d; transform: rotate(2deg); }
+.sp-robot-frame img { width: 100%; height: auto; aspect-ratio: 1 / 1.08; object-fit: cover; object-position: 50% 55%; border-radius: 17px; }
+.sp-robot-frame .sj-image-badge { bottom: 22px; left: 22px; }
+.sp-hero-photo figcaption { margin-top: 22px; color: #939793; font-size: 10px; text-align: right; }
+.sp-recognition-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.sp-recognition-grid > div { height: 100%; }
+.sp-recognition-card { height: 100%; padding: 30px; border: 1px solid #2a2c2e; border-radius: 20px; background: #16181a; }
+.sp-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.sp-card-top svg { width: 32px; height: 32px; color: #f04543; }
+.sp-card-top > span { color: #838985; font-size: 10px; }
+.sp-recognition-card h3 { font-size: 23px; line-height: 1.3; letter-spacing: -.04em; font-weight: 500; }
+.sp-recognition-card p { margin-top: 13px; color: #a9aaa7; font-size: 12px; line-height: 1.9; }
+.sp-purpose { display: grid; grid-template-columns: 1fr .9fr; gap: 80px; padding: 42px; border: 1px solid #49302f; border-radius: 24px; background: #211a1b; }
+.sp-purpose h2, .sp-team h2, .sp-faq-layout h2 { margin-top: 15px; font-size: clamp(2rem, 3.6vw, 3.5rem); line-height: 1.17; letter-spacing: -.055em; font-weight: 500; }
+.sp-purpose h2 > span, .sp-team h2 > span, .sp-faq-layout h2 > span { color: #9ea29e; }
+.sp-purpose > div > p:not(.sj-eyebrow) { margin-top: 22px; color: #bcb4af; font-size: 13px; line-height: 1.95; max-width: 520px; }
+.sp-purpose-list { display: grid; align-content: center; }
+.sp-purpose-list article { display: grid; grid-template-columns: 25px 1fr; gap: 18px; padding-block: 20px; border-bottom: 1px solid #493537; }
+.sp-purpose-list article:first-child { padding-top: 0; }
+.sp-purpose-list article:last-child { border: 0; padding-bottom: 0; }
+.sp-purpose-list article > span { color: #f04543; font-size: 9px; padding-top: 7px; }
+.sp-purpose-list h3 { font-size: 20px; font-weight: 500; letter-spacing: -.03em; }
+.sp-purpose-list p { margin-top: 8px; color: #bcb4af; font-size: 12px; line-height: 1.9; }
+.sp-support-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 30px; }
+.sp-support-options { min-width: 0; display: grid; gap: 12px; }
+.sp-choice { display: grid; grid-template-columns: 25px 1fr 30px; align-items: center; gap: 16px; cursor: pointer; padding: 25px 27px; border: 1px solid #2a2c2e; border-radius: 18px; background: #16181a; transition: background .2s, border-color .2s; }
+.sp-choice:hover { border-color: #6b4847; }
+.sp-choice.is-selected { border-color: #be514e; background: #271d1e; }
+.sp-choice:has(input:focus-visible) { outline: 2px solid #f04543; outline-offset: 4px; }
+.sp-choice-number { color: #f04543; font-size: 10px; }
+.sp-choice .sj-eyebrow { display: block; font-size: 8px; color: #a9aaa7; }
+.sp-choice strong { display: block; margin-top: 8px; font-size: clamp(1.3rem, 2.2vw, 2rem); font-weight: 500; letter-spacing: -.04em; line-height: 1.3; }
+.sp-choice-mark { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid #484a4a; border-radius: 50%; color: #a9aaa7; }
+.sp-choice-mark svg { width: 14px; height: 14px; }
+.sp-choice.is-selected .sp-choice-mark { background: #f04543; border-color: #f04543; color: #101112; }
+.sp-support-panel { min-width: 0; padding: 34px; border: 1px solid #2a2c2e; border-radius: 22px; background: #16181a; }
+.sp-support-panel h3 { margin-top: 15px; font-size: 31px; line-height: 1.2; font-weight: 500; letter-spacing: -.045em; }
+.sp-body { margin-top: 19px; color: #a9aaa7; font-size: 13px; line-height: 1.95; }
+.sp-panel-label { margin-top: 25px; font-size: 9px; color: #9ea29e; text-transform: uppercase; letter-spacing: .1em; }
+.sp-support-panel ul { margin-top: 13px; }
+.sp-support-panel li { display: flex; align-items: center; gap: 12px; padding-block: 13px; border-top: 1px solid #2a2c2e; font-size: 12px; }
+.sp-support-panel li > span { width: 5px; height: 5px; background: #f04543; border-radius: 50%; flex-shrink: 0; }
+.sp-support-panel .sj-button { margin-top: 23px; }
+.sp-team { display: grid; grid-template-columns: 1fr .9fr; align-items: center; gap: 55px; }
+.sp-team figure { position: relative; overflow: hidden; border-radius: 22px; border: 1px solid #353638; }
+.sp-team img { width: 100%; height: auto; aspect-ratio: 1.25 / 1; object-fit: cover; }
+.sp-team figcaption { position: absolute; bottom: 18px; left: 18px; right: 18px; padding: 9px 14px; border: 1px solid #ffffff30; border-radius: 99px; background: #101112dd; color: #eeede7; font-size: 9px; }
+.sp-team > div > p:not(.sj-eyebrow) { margin-top: 22px; color: #a9aaa7; font-size: 13px; line-height: 1.95; }
+.sp-text-links { display: flex; flex-wrap: wrap; gap: 23px; margin-top: 25px; }
+.sp-text-link, .sp-text-links a { display: inline-flex; align-items: center; gap: 11px; font-size: 11px; font-weight: 600; }
+.sp-text-link:hover, .sp-text-links a:hover { color: #f04543; }
+.sp-text-link svg, .sp-text-links svg { width: 15px; height: 15px; color: #f04543; }
+.sp-faq-layout { display: grid; grid-template-columns: .6fr 1fr; gap: 70px; }
+.sp-faq-layout .sp-text-link { margin-top: 16px; }
+.sp-faq-list { border-top: 1px solid #2a2c2e; }
+.sp-faq-list details { border-bottom: 1px solid #2a2c2e; }
+.sp-faq-list summary { display: flex; justify-content: space-between; align-items: center; gap: 25px; padding-block: 23px; font-size: 13px; font-weight: 600; cursor: pointer; list-style: none; }
+.sp-faq-list summary::-webkit-details-marker { display: none; }
+.sp-faq-list summary:focus-visible { outline: 2px solid #f04543; outline-offset: 5px; }
+.sp-faq-list summary > span { position: relative; width: 13px; height: 13px; flex-shrink: 0; }
+.sp-faq-list summary > span::before, .sp-faq-list summary > span::after { content: ""; position: absolute; background: #f04543; }
+.sp-faq-list summary > span::before { top: 6px; left: 0; width: 13px; height: 1px; }
+.sp-faq-list summary > span::after { left: 6px; top: 0; width: 1px; height: 13px; }
+.sp-faq-list details[open] summary { color: #f04543; }
+.sp-faq-list details[open] summary > span::after { display: none; }
+.sp-faq-list details > p { padding: 0 28px 24px 0; color: #a9aaa7; font-size: 12px; line-height: 1.95; }
+.sp-closing { position: relative; isolation: isolate; padding-block: 100px 85px; text-align: center; scroll-margin-top: 115px; }
+.sp-closing::before { content: ""; position: absolute; z-index: -1; inset: 5% -15% 0; background-image: radial-gradient(#61717a55 1px, transparent 1.5px); background-size: 10px 10px; mask-image: radial-gradient(ellipse, #000, transparent 65%); pointer-events: none; }
+.sp-closing h2 { margin-top: 20px; font-size: clamp(3.5rem, 7vw, 6.8rem); line-height: 1.1; letter-spacing: -.065em; font-weight: 500; }
+.sp-closing h2 > span { color: #f04543; }
+.sp-closing > p:not(.sj-eyebrow) { margin-top: 24px; color: #a9aaa7; font-size: 13px; line-height: 1.95; }
+.sp-closing .sj-button { margin-top: 27px; }
+.sp-contact-email { display: block; width: fit-content; max-width: 100%; margin: 20px auto 0; font-size: 11px; color: #a9aaa7; text-underline-offset: 4px; text-decoration: underline; overflow-wrap: anywhere; }
+.sp-contact-email:hover { color: #f04543; }
+@media (max-width: 1100px) {
+  .sp-hero { gap: 40px; }
+  .sp-purpose { padding: 32px; gap: 40px; }
+  .sp-team { gap: 35px; }
+  .sp-choice { padding: 23px; gap: 12px; }
+}
+@media (max-width: 1023px) {
+  .sp-hero h1 { font-size: clamp(3rem, 6vw, 4.7rem); }
+  .sp-recognition-card { padding: 24px; }
+  .sp-recognition-card h3 { font-size: 21px; }
+  .sp-support-grid { gap: 20px; }
+  .sp-support-panel { padding: 28px; }
+  .sp-choice { grid-template-columns: 20px 1fr 28px; padding: 22px 18px; }
+  .sp-support-panel h3 { font-size: 27px; }
+}
+@media (max-width: 767px) {
+  .sp-hero { grid-template-columns: 1fr; gap: 35px; }
+  .sp-hero h1 { font-size: clamp(3.5rem, 11vw, 5.5rem); }
+  .sp-hero-photo { max-width: 480px; justify-self: center; }
+  .sp-robot-frame { padding: 6px; border-radius: 20px; transform: none; }
+  .sp-robot-frame img { border-radius: 14px; aspect-ratio: 1.1 / 1; }
+  .sp-hero-photo figcaption { margin-top: 16px; }
+  .sp-hero-note { font-size: 10px; margin-top: 20px; }
+  .sp-recognition-grid { grid-template-columns: 1fr; gap: 12px; }
+  .sp-recognition-card { padding: 24px; }
+  .sp-card-top { margin-bottom: 24px; }
+  .sp-card-top svg { width: 28px; height: 28px; }
+  .sp-recognition-card h3 { font-size: 23px; }
+  .sp-purpose { grid-template-columns: 1fr; gap: 28px; padding: 26px; border-radius: 20px; }
+  .sp-purpose h2, .sp-team h2, .sp-faq-layout h2 { font-size: clamp(2.1rem, 7.2vw, 3rem); }
+  .sp-purpose > div > p:not(.sj-eyebrow) { font-size: 12px; margin-top: 18px; }
+  .sp-purpose-list p { font-size: 11px; }
+  .sp-support-grid { grid-template-columns: 1fr; gap: 20px; }
+  .sp-choice { padding: 23px; grid-template-columns: 22px 1fr 30px; }
+  .sp-choice strong { font-size: 23px; }
+  .sp-support-panel { padding: 26px; }
+  .sp-support-panel h3 { font-size: 28px; }
+  .sp-body { font-size: 12px; }
+  .sp-support-panel li { font-size: 11px; }
+  .sp-team { grid-template-columns: 1fr; gap: 26px; }
+  .sp-team img { aspect-ratio: 1.5 / 1; }
+  .sp-team > div > p:not(.sj-eyebrow) { font-size: 12px; margin-top: 18px; }
+  .sp-faq-layout { grid-template-columns: 1fr; gap: 30px; }
+  .sp-faq-list summary { font-size: 12px; padding-block: 21px; }
+  .sp-faq-list details > p { font-size: 11px; }
+  .sp-closing { padding-block: 80px 65px; }
+  .sp-closing .sj-eyebrow { font-size: 8px; }
+  .sp-closing h2 { font-size: clamp(2.8rem, 10vw, 4.8rem); }
+  .sp-closing > p:not(.sj-eyebrow) { font-size: 12px; }
+}
+@media (max-width: 360px) {
+  .sp-hero h1 { font-size: 3.1rem; }
+  .sp-choice { padding: 21px 17px; gap: 10px; }
+  .sp-choice strong { font-size: 21px; }
+  .sp-support-panel { padding: 23px; }
+  .sp-support-panel .sj-button { padding-inline: 13px; gap: 9px; }
+}
