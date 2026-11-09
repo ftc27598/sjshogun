@@ -29,8 +29,11 @@ npm run preview
 - TypeScript
 - Tailwind CSS
 - shadcn/ui
-## HackShogun
 
-The event page is at `/hackshogun`. Event links and sponsor settings live in `src/lib/hackshogun.ts`; the public hacker guide is `public/hackshogun-2027-guide.txt`. The submission form is distributed through Discord and must not be published on the site or in the downloadable guide.
+## Project Pollinate
 
-The sponsor carousel beneath the event navigation and the sponsor section near the bottom are disabled. To publish sponsors, add only confirmed HackShogun sponsors to `hackShogunSponsors` with a name, logo path, and website URL, then set `showHackShogunSponsors` to `true`. Both sections remain absent when the list is empty. Event sponsors are separate from SJ Shogun robotics team partners.
+The page lives at `/project-pollinate`. Printable parts, source CAD, drawings, and the complete download bundle live in `public/project-pollinate/`.
+
+To regenerate the files, install `scripts/requirements-cad.txt` with pip, then run `python scripts/generate-pollinate-cad.py`. The generator checks each delivered STL for a closed, connected solid, correct print orientation, printer-envelope fit, and nonempty 0.2 mm layers. It also checks the assembly for collisions and exports the same geometry for the 3D viewer.
+
+Physical print, fit and field testing are pending. The impact calculator uses an adjustable build-rate assumption and 48 nesting tubes per build; it does not measure installations or bee occupancy.

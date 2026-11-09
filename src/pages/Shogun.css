@@ -15,6 +15,10 @@
 .sj-brand small { display: block; margin-top: 3px; color: #9ea29e; font-size: 7px; letter-spacing: .17em; font-weight: 500; }
 .sj-desktop-links { display: flex; gap: 28px; align-items: center; margin-left: auto; font-size: 12px; font-weight: 600; color: #bdbeb9; }
 .sj-header-actions { display: flex; align-items: center; gap: 8px; }
+.sj-pollinate-link { display: inline-flex; align-items: center; gap: 9px; padding: 11px 17px; border-radius: 99px; background: #f3cd45; color: #24200d; font-size: 11px; font-weight: 800; white-space: nowrap; }
+.sj-pollinate-link:hover { background: #ffe074; }
+.sj-pollinate-link svg { width: 14px; height: 14px; }
+@media (max-width: 480px) { .sj-pollinate-link { padding: 10px 11px; font-size: 10px; } .sj-pollinate-link svg { display: none; } .sj-header { gap: 8px; padding-inline: 14px; } .sj-brand { font-size: 19px; } }
 .sj-header a, .shogun-site a, .sj-footer a { transition: color .2s, background .2s, border-color .2s; }
 .sj-desktop-links a:hover, .sj-mobile-links a:hover, .sj-footer a:hover { color: #f04543; }
 .sj-desktop-links [aria-current="page"] { color: #f04543; }
@@ -38,12 +42,6 @@
 .sj-hero h1 > span { color: #f04543; }
 .sj-hero-description { max-width: 470px; font-size: 14px; line-height: 1.95; color: #b9bbb7; }
 .sj-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
-.sj-hack-promo { display: flex; align-items: center; justify-content: space-between; gap: 20px; max-width: 440px; margin-top: 28px; padding: 17px 21px; border: 1px solid #49302f; border-radius: 18px; background: #251b1c; }
-.sj-hack-promo strong { display: block; margin-top: 5px; font-size: 19px; font-weight: 500; letter-spacing: -.03em; }
-.sj-hack-promo .sj-eyebrow { font-size: 8px; }
-.sj-hack-promo > svg { width: 23px; height: 23px; color: #f04543; transition: transform .2s; }
-.sj-hack-promo:hover { background: #302021; border-color: #f04543; }
-.sj-hack-promo:hover > svg { transform: translate(2px, -2px); }
 .sj-hero-photo { min-width: 0; animation: sj-photo-in .8s ease-out both; }
 .sj-photo-label { display: flex; justify-content: space-between; margin-bottom: 13px; font-size: 9px; color: #9ea29e; text-transform: uppercase; letter-spacing: .08em; }
 .sj-photo-frame { padding: 8px; border: 1px solid #353638; border-radius: 24px; background: #191b1d; transform: rotate(2deg); }
@@ -142,8 +140,6 @@
   .sj-hero-description { font-size: 12px; }
   .sj-actions { gap: 9px; }
   .sj-button { min-height: 45px; padding: 11px 17px; font-size: 10px; }
-  .sj-hack-promo { padding: 15px 18px; }
-  .sj-hack-promo strong { font-size: 17px; }
   .sj-section-heading > p { max-width: 240px; }
   .sj-robot-copy { padding-right: 5px; }
   .sj-robot-alternate .sj-robot-copy { padding-left: 5px; }
@@ -168,7 +164,6 @@
   .sj-hero-eyebrow { margin-top: 30px; font-size: 9px; }
   .sj-hero h1 { font-size: clamp(3.7rem, 11.5vw, 5.5rem); }
   .sj-hero-description { max-width: 470px; font-size: 13px; }
-  .sj-hack-promo { max-width: none; }
   .sj-photo-frame { transform: none; padding: 6px; border-radius: 20px; }
   .sj-photo-frame img { aspect-ratio: 866 / 445; border-radius: 14px; }
   .sj-hero-photo figcaption { margin-top: 17px; }

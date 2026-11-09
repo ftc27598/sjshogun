@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "units": "mm",
+  "assembly_interference_mm3": 0.0,
+  "roof_channel_clearance_per_side_mm": 0.4,
+  "parts": [
+    {
+      "file": "housing.stl",
+      "watertight": true,
+      "connected_solids": 1,
+      "build_plate_contact_mm2": 28768.32,
+      "nonempty_layers_at_0_2_mm": 750,
+      "bounds_mm": [
+        180.0,
+        160.0,
+        150.0
+      ],
+      "volume_cm3": 375.4,
+      "sha256": "4d44d4b50130a44f87212c72da4d2924afc2a9740859553a9ccec47646b74945"
+    },
+    {
+      "file": "roof.stl",
+      "watertight": true,
+      "connected_solids": 1,
+      "build_plate_contact_mm2": 926.99,
+      "nonempty_layers_at_0_2_mm": 1000,
+      "bounds_mm": [
+        200.0,
+        49.257,
+        200.0
+      ],
+      "volume_cm3": 185.0,
+      "sha256": "0a612ea16af7567c239699f357f3eb27bcf4c49d50eb64aa0ce23cc7e9a1e209"
+    }
+  ],
+  "physical_print_tested": false,
+  "field_tested": false
+}

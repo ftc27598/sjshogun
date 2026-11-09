@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Arrow from "@/components/Arrow";
@@ -36,7 +35,6 @@ const questions = [
   { question: "Where will our logo be featured?", answer: "As a sponsor, your logo is featured on Shogun's social media, team merchandise, and robot." },
   { question: "Can I contribute something other than funding?", answer: "Yes. We'd like to hear from people and organizations who can offer materials, fabrication, equipment, or technical expertise. Contact us before arranging a contribution so we can confirm what the team can use." },
   { question: "What sponsorship levels are available?", answer: "Contact us for current sponsorship options. We can discuss your goals and the team's needs as part of that conversation." },
-  { question: "Can I support HackShogun?", answer: "Tell us you're interested in HackShogun when you reach out. We'll discuss opportunities to support the event with you." },
 ];
 
 const inquiryUrl = (subject: string) => `mailto:dojorojorobotics@gmail.com?subject=${encodeURIComponent(subject)}`;
@@ -116,7 +114,7 @@ const Sponsorship = () => {
           <Reveal><div className="sp-purpose"><div><p className="sj-eyebrow">The reason to partner</p><h2 id="purpose-title">A robot is<br /><span>just the beginning.</span></h2><p>Behind every mechanism is a student learning how to solve a problem. Behind every outreach event is a chance to help someone else start. Your support helps us do both.</p></div><div className="sp-purpose-list">{[
             { title: "Build", text: "From early CAD to the competition field, students turn ideas into working machines." },
             { title: "Learn", text: "Design, programming, and teamwork come together in a real engineering challenge." },
-            { title: "Share", text: "STEM outreach and HackShogun give us ways to bring that experience to others." },
+            { title: "Share", text: "STEM outreach gives us ways to bring that experience to others." },
           ].map((item, index) => <article key={item.title}><span>0{index + 1}</span><div><h3>{item.title}</h3><p>{item.text}</p></div></article>)}</div></div></Reveal>
         </section>
 
@@ -126,7 +124,7 @@ const Sponsorship = () => {
         </section>
 
         <section className="sj-section sj-width" aria-labelledby="sponsor-team-title">
-          <Reveal><div className="sp-team"><figure><img src={teamPhoto} alt="Saint John's Shogun robotics team gathered with robots and competition awards" loading="lazy" decoding="async" width="866" height="445" /><figcaption>Saint John's Shogun · Team 27598</figcaption></figure><div><p className="sj-eyebrow">Meet your team</p><h2 id="sponsor-team-title">Local roots.<br /><span>Big ideas.</span></h2><p>We're the FIRST Tech Challenge team at Saint John's High School in Shrewsbury. New members and team captains all have a hand in what we build, from the robot to our community outreach.</p><div className="sp-text-links"><a href="/#robots">See our robots<Arrow /></a><Link to="/hackshogun">Explore HackShogun<Arrow /></Link></div></div></div></Reveal>
+          <Reveal><div className="sp-team"><figure><img src={teamPhoto} alt="Saint John's Shogun robotics team gathered with robots and competition awards" loading="lazy" decoding="async" width="866" height="445" /><figcaption>Saint John's Shogun · Team 27598</figcaption></figure><div><p className="sj-eyebrow">Meet your team</p><h2 id="sponsor-team-title">Local roots.<br /><span>Big ideas.</span></h2><p>We're the FIRST Tech Challenge team at Saint John's High School in Shrewsbury. New members and team captains all have a hand in what we build, from the robot to our community outreach.</p><div className="sp-text-links"><a href="/#robots">See our robots<Arrow /></a></div></div></div></Reveal>
         </section>
 
         <section className="sj-section sj-width" aria-labelledby="partners-title">
